@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>Kate and Kasey Photos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./stylesheets/w3.css">
+<link rel="stylesheet" href="./style/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script type="text/javascript">
+    function checkOS() {
+        var isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isiOS) {
+            alert("is ios")
+            document.getElementById("titleImg").style.backgroundAttachment = "scroll";
+        } else {
+            alert("not ios");
+        }
+    }
+</script>
 <style>
     body,
     h1,
@@ -28,7 +39,7 @@
     .bgimg-2,
     .bgimg-3 {
         opacity: 0.7;
-        background-attachment: scroll;
+        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -36,7 +47,7 @@
     /* First image (Logo. Full height) */
     
     .bgimg-1 {
-        background-image: url('./fall2.jpg');
+        background-image: url('./photos/fall2.jpg');
         min-height: 100%;
     }
     
@@ -55,11 +66,12 @@
         filter: grayscale(90%);
     }
 </style>
+
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Poiret+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Poiret+One" rel="stylesheet">
 </head>
 
-<body>
+<body onload="checkOS()">
 
     <!-- Navbar (sit on top) -->
     <!--
@@ -74,9 +86,9 @@
     -->
 
     <!-- First Parallax Image with Logo Text -->
-    <div class="bgimg-1 w3-opacity w3-display-container">
+    <div id="titleImg" class="bgimg-1 w3-opacity w3-display-container">
         <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-xlarge w3-black w3-nexa w3-animate-opacity">KATE <span class="w3-hide-small"> & </span> KASEY</span>
+            <span class="w3-center w3-padding-xlarge w3-black w3-nexa indexTitleFont w3-animate-opacity">KATE & KASEY</span>
         </div>
     </div>
 
@@ -85,19 +97,19 @@
         <h1 class="w3-center w3-nexa">Kasey & Katie Vacation Photos</h1>
         <div id="linkContainer">
             <div id="linkBtn">
-                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%" onclick="alert('Work in progress');">About</button>
+                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%">About</button>
             </div>
             <div id="linkBtn">
-                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%" onclick="alert('Work in progress 2');">Index</button>
+                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%">Index</button>
             </div>
             <div id="linkBtn">
-                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%" onclick="alert('Work in progress 3');">World Map</button>
+                <button class="w3-btn-block w3-light-grey w3-hover-blue-grey" style="height:100%">World Map</button>
             </div>
         </div>
-        <div id="indexRowCont">
-            <div class="w3-quarter w3-white w3-display-container">
+        <div>
+            <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
-                    <img HEIGHT=100% WIDTH=100% src="http://i58.photobucket.com/albums/g252/websterkk/fall2_zpsp5ijsmtw.jpg" alt="Norway">
+                    <img HEIGHT=100% WIDTH=100% src="./photos/fall2.jpg" alt="Norway">
                 </div>
                 <a class="w3-display-middle-full w3-imgDescription-text w3-white" href="./cancunInd.html">
                     <p class="indexFont w3-theme" title="Go To W3.CSS">
@@ -105,9 +117,9 @@
                         <br> 2014</p>
                 </a>
             </div>
-            <div class="w3-quarter w3-white w3-display-container">
+            <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
-                    <img HEIGHT=100% WIDTH=100% src="http://i58.photobucket.com/albums/g252/websterkk/fall2_zpsp5ijsmtw.jpg" alt="Norway" class="w3-hover-opacity-low">
+                    <img HEIGHT=100% WIDTH=100% src="./photos/fall2.jpg" alt="Norway" class="w3-hover-opacity-low">
                 </div>
                 <a class="w3-display-middle-full w3-imgDescription-text w3-white" href="./indiaInd.html">
                     <p class="indexFont w3-theme" title="Go To W3.CSS">
@@ -115,9 +127,9 @@
                         <br>2015</p>
                 </a>
             </div>
-            <div class="w3-quarter w3-white w3-display-container">
+            <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
-                    <img HEIGHT=100% WIDTH=100% src="http://i58.photobucket.com/albums/g252/websterkk/modelImg_zpspp8lpsvy.jpg" alt="Norway" class="w3-hover-opacity-low">
+                    <img HEIGHT=100% WIDTH=100% src="./photos/fall2.jpg" alt="Norway" class="w3-hover-opacity-low">
                 </div>
                 <a class="w3-display-middle-full w3-imgDescription-text w3-white" href="./gcInd.html">
                     <p class="indexFont w3-theme" title="Go To W3.CSS">
@@ -125,9 +137,19 @@
                         <br> 2016</p>
                 </a>
             </div>
-            <div class="w3-quarter w3-white w3-display-container">
+            <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
-                    <img HEIGHT=100% WIDTH=100% src="./fall2.jpg" alt="Norway" class="w3-hover-opacity-low">
+                    <img HEIGHT=100% WIDTH=100% src="./photos/fall2.jpg" alt="Norway" class="w3-hover-opacity-low">
+                </div>
+                <a class="w3-display-middle-full w3-imgDescription-text w3-white" href="./gcInd.html">
+                    <p class="indexFont w3-theme" title="Go To W3.CSS">
+                        <br>Flagstaff
+                        <br> 2016</p>
+                </a>
+            </div>
+            <div class="w3-half w3-white w3-display-container w3-last-row">
+                <div class="w3-padding-medium">
+                    <img HEIGHT=100% WIDTH=100% src="./photos/fall2.jpg" alt="Norway" class="w3-hover-opacity-low">
                 </div>
                 <a class="w3-display-middle-full w3-imgDescription-text w3-white" href="./crInd.html">
                     <p class="indexFont w3-theme" title="Go To W3.CSS">
