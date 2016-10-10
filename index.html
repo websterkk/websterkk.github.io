@@ -10,7 +10,7 @@
         var isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
         var condClass = document.querySelector("#indexImgText");
         if (isiOS) {
-            document.getElementsByClassName("titleImg").style.backgroundAttachment = "scroll";
+            document.getElementById("titleImg").style.backgroundAttachment = "scroll";
         } else {
             var els = [].slice.apply(document.getElementsByClassName("indexImgText"));
             for (var i = 0; i < els.length; i++) {
