@@ -8,11 +8,14 @@
 <script type="text/javascript">
     function checkOS() {
         var isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        var condClass = document.querySelector("#indexImgText");
         if (isiOS) {
-            alert("is ios")
-            document.getElementById("titleImg").style.backgroundAttachment = "scroll";
+            document.getElementsByClassName("titleImg").style.backgroundAttachment = "scroll";
         } else {
-            alert("not ios");
+            var els = [].slice.apply(document.getElementsByClassName("indexImgText"));
+            for (var i = 0; i < els.length; i++) {
+                els[i].className = els[i].className.replace("indexImgText", "indexImgHiddenText");
+            }
         }
     }
 </script>
@@ -107,7 +110,7 @@
             </div>
         </div>
         <div>
-            <div class="w3-half w3-white w3-display-container">
+            <div class="w3-half w3-display-container">
                 <div class="w3-padding-medium">
                     <img HEIGHT=100% WIDTH=100% src="./fall2.jpg" alt="Norway">
                 </div>
@@ -116,6 +119,7 @@
                         <br>Cancun
                         <br> 2014</p>
                 </a>
+                <div class="indexImgText">Cancun 2014</div>
             </div>
             <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
@@ -126,6 +130,7 @@
                         <br>India
                         <br>2015</p>
                 </a>
+                <div class="indexImgText">India 2014</div>
             </div>
             <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
@@ -136,6 +141,7 @@
                         <br>Grand Canyon
                         <br> 2016</p>
                 </a>
+                <div class="indexImgText">Grand Canyon 2014</div>
             </div>
             <div class="w3-half w3-white w3-display-container">
                 <div class="w3-padding-medium">
@@ -146,6 +152,7 @@
                         <br>Flagstaff
                         <br> 2016</p>
                 </a>
+                <div class="indexImgText">Flagstaff 2014</div>
             </div>
             <div class="w3-half w3-white w3-display-container w3-last-row">
                 <div class="w3-padding-medium">
@@ -156,6 +163,7 @@
                         <br>Costa Rica
                         <br>2016</p>
                 </a>
+                <div class="indexImgText">Costa Rica 2014</div>
             </div>
         </div>
     </div>
