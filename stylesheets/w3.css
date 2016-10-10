@@ -10,6 +10,7 @@ a {
     text-decoration: none;
 }
 
+
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 
 html {
@@ -255,6 +256,7 @@ h6 {
 .w3-serif {
     font-family: "Times New Roman", Times, serif
 }
+
 .w3-nexa {
     font-family: "Poiret One", "Cabin", Arial, sans-serif;
     letter-spacing: 4px;
@@ -776,6 +778,7 @@ img.w3-image,
     outline: 0;
     width: 600px
 }
+
 #w3-modal-content2 {
     margin: auto;
     background-color: transparent;
@@ -1029,13 +1032,15 @@ input[type=radio].w3-radio:disabled+.w3-validate {
 .w3-quarter {
     width: 49.99999%;
 }
+
 .indexCapt {
     font: 50px;
 }
-.w3-half,{
-    width:99.99%;
-}
 
+.w3-half,
+{
+    width: 99.99%;
+}
 
 #linkContainer {
     width: 100%;
@@ -1097,6 +1102,7 @@ input[type=radio].w3-radio:disabled+.w3-validate {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 #photoRowContainer {
     width: 100%;
     height: 44vw;
@@ -1152,32 +1158,48 @@ input[type=radio].w3-radio:disabled+.w3-validate {
 #indexHeight {
     height: calc(33.33vw - 0px);
 }
-.indexFont{
-    font-size: 6vw;
-}
-.indexTitleFont{
+
+.indexImgText {
+    text-align: center!important;
     font-size: 4vw;
 }
-.w3-padding-medium-final{
+.indexImgHiddenText {
+    display: none;
+}
+
+.indexFont {
+    font-size: 6vw;
+}
+
+.indexTitleFont {
+    font-size: 4vw;
+}
+
+.w3-padding-medium-final {
     padding: 30px 30px 30px 30px!important;
 }
-.w3-last-row{
+
+.w3-last-row {
     margin: 0;
 }
 
 @media only screen and (min-width:750px) {
-.w3-last-row{
-    margin-left: 25%;
-}
-    .w3-padding-medium-final{
-    padding: 30px auto 30px auto!important;
-}
-    .indexFont{
-    font-size: 3.5vw;
-}
-    .indexTitleFont{
-    font-size: 35px;
-}
+    .indexImgText {
+        text-align: center!important;
+        font-size: 2vw;
+    }
+    .w3-last-row {
+        margin-left: 25%;
+    }
+    .w3-padding-medium-final {
+        padding: 30px auto 30px auto!important;
+    }
+    .indexFont {
+        font-size: 3.5vw;
+    }
+    .indexTitleFont {
+        font-size: 35px;
+    }
     .w3-col.m1 {
         width: 8.33333%
     }
@@ -1471,8 +1493,7 @@ input[type=radio].w3-radio:disabled+.w3-validate {
     }
 }
 
-@media (max-width:600px) {
-}
+@media (max-width:600px) {}
 
 @media (max-width:1539px) and (min-width:750px) {
     .w3-hide-medium {
@@ -1552,6 +1573,7 @@ input[type=radio].w3-radio:disabled+.w3-validate {
 .w3-large {
     font-size: 18px!important
 }
+
 .w3-xlarge {
     font-size: 24px!important
 }
@@ -2358,7 +2380,7 @@ input[type=radio].w3-radio:disabled+.w3-validate {
 .w3-hover-black:hover {
     color: #fff!important;
     background-color: #000!important;
-    opacity:0.9
+    opacity: 0.9
 }
 
 .w3-grey,
