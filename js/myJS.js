@@ -20,7 +20,7 @@ function myFunction(imgName, hv, imgCap) {
     document.getElementById("modalContainer").style.display = "block";
 }
 
-
+/*
 // SET GOOGLE MAPS
 var myCenter = new google.maps.LatLng(41.878114, -87.629798);
 
@@ -40,7 +40,7 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-/* STUFF TO REMOVE FROM INDEX - OR RENAME:
+ STUFF TO REMOVE FROM INDEX - OR RENAME:
 indexImgLinkContainer
 indexImgPadding
 indexHoverText
