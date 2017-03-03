@@ -46,3 +46,5 @@ indexImgPadding
 indexHoverText
 indexFont
 indexImgText*/
+
+//testing to see if this fixes things
