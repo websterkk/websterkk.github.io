@@ -1,0 +1,562 @@
+/* STYLE APPLIED TO ALL SIZES */
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.aa {
+    position: relative;
+    margin: 10px 30px 0px 30px;
+    width: calc(100% - 60px);
+    height: calc(60vw + 50px);
+    display: inline-block;
+    float: left;
+}
+
+.aaLastRow {
+    position: relative;
+    margin: 10px 30px 0px 30px;
+    width: calc(100% - 60px);
+    height: calc(60vw + 50px);
+    display: inline-block;
+    float: left;
+}
+
+.bb {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 50px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cc {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 30vw + 60px);
+    z-index: 2;
+    display: block;
+    background-color: white;
+    color: black;
+    opacity: 0;
+    padding-top: calc(30vw - 110px);
+    font-size: 45px;
+}
+
+.cc:hover {
+    display: block;
+    opacity: 0.6;
+}
+
+.dd {
+    height: 50px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    font-size: 3.5vw;
+    color: black;
+}
+
+.ddHidden {
+    display: none;
+}
+
+#linkContainer {
+    width: 100%;
+    height: 50px;
+    font-size: 44;
+    float: left;
+    display: inline-block;
+}
+
+#headerHead1 {
+    width: 100%;
+    height: 2vw;
+    background-color: lightgray;
+    font-size: 44;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#headerHead2 {
+    width: 100%;
+    height: 2vw;
+    background-color: lightgray;
+    font-size: 44;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#headerHead3 {
+    width: 100%;
+    height: 2vw;
+    background-color: lightgray;
+    font-size: 44;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.linkBtn {
+    width: calc(33.333% - 6px);
+    height: calc(100% - 4px);
+    display: inline-block;
+    margin: 2px 3px 2px 3px;
+    float: left;
+}
+
+#tNImage {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    font-size: 44;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.thumbFade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0;
+}
+
+.thumbFade:hover {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+#photoRowContainer {
+    width: 100%;
+    height: 44vw;
+    display: block;
+    float: left
+}
+
+#indexHeight {
+    height: calc(33.33vw - 0px);
+}
+
+.indexImgText {
+    font-size: 5vw;
+}
+
+.indexImgHiddenText {
+    display: none;
+}
+
+.indexFont {
+    font-size: 6vw;
+}
+
+#indexTitleFont {
+    font-size: 4vw;
+    font-family: "Poiret One", "Cabin", Arial, sans-serif;
+    letter-spacing: 4px;
+    padding: 16px 32px!important;
+    color: #fff!important;
+    background-color: #000!important;
+    opacity: 0.9;
+}
+
+.fadeIn {
+    -webkit-animation: opac 1.5s;
+    animation: opac 1.5s
+}
+
+@-webkit-keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: .9
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: .9
+    }
+}
+
+.w3-padding-medium-final {
+    padding: 30px 30px 30px 30px!important;
+}
+
+.w3-last-row {
+    margin: 0;
+}
+
+#indexContent {
+    max-width: 100%;
+    margin: auto;
+    padding: 0.01em 16px;
+    text-align: center;
+}
+
+#indexContent:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.btnBlock {}
+
+.indexBtn {
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 14px;
+    color: #000!important;
+    background-color: #d9d9d9!important;
+    height: 100%;
+}
+
+.indexBtn:hover {
+    color: #fff!important;
+    background-color: #607d8b!important;
+    border-color: #607d8b!important;
+    -webkit-transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+    transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s
+}
+
+.fontNexa {
+    font-family: "Poiret One", "Cabin", Arial, sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.indexImgPadding {
+    padding: 30px 30px 30px 30px!important;
+}
+
+#titleText {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#titleImg {
+    opacity: 0.8;
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../photos/fall2.jpg');
+    min-height: 100%;
+}
+
+.indexImgLinkContainer {
+    width: 99.99%;
+    position: relative;
+    display: block;
+}
+
+.indexLastRow {
+    margin: 0;
+}
+
+#imgContainer {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    margin-top: 30px
+}
+
+.indexHoverText {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: calc(100% - 0px);
+    width: calc(100% - 0px);
+    opacity: 0;
+    color: #000!important;
+    background-color: #fff!important
+}
+
+.indexHoverText:hover {
+    visibility: visible;
+    opacity: 0.6;
+}
+
+#indexFooter {
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    color: white;
+    background-color: #666666;
+}
+
+.fontNexa {
+    font-family: "Poiret One", "Cabin", Arial, sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.locationTitle {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#modalContainer {
+    z-index: 3;
+    display: none;
+    padding-top: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9)
+}
+
+#modalImg {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    background-color: transparent;
+    position: relative;
+    margin-top: auto;
+    width: 90%;
+    height: 85%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#modalDescription {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: black;
+    color: white;
+    text-align: center
+}
+
+#allThumbs {
+    position: relative;
+    width: 20%;
+    height: 20vw;
+    display: inline-block;
+    float: left;
+    margin: 2vw 2% 2vw 2%;
+    outline: 1px solid black;
+}
+
+#allThumbsL1 {
+    position: relative;
+    width: 20%;
+    height: 20vw;
+    display: inline-block;
+    float: left;
+    margin: 2vw 2% 2vw 4%;
+    outline: 1px solid black;
+}
+
+#allThumbsL2 {
+    position: relative;
+    width: 20%;
+    height: 20vw;
+    display: inline-block;
+    float: left;
+    margin: 2vw 2% 2vw 4%;
+    outline: 1px solid black;
+}
+
+#allThumbsR1 {
+    position: relative;
+    width: 20%;
+    height: 20vw;
+    display: inline-block;
+    float: left;
+    margin: 2vw 4% 2vw 2%;
+    outline: 1px solid black;
+}
+
+#allThumbsR2 {
+    position: relative;
+    width: 20%;
+    height: 20vw;
+    display: inline-block;
+    float: left;
+    margin: 2vw 4% 2vw 2%;
+    outline: 1px solid black;
+}
+
+#googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
+}
+
+
+/* STYLE APPLIED TO SCREENS BIGGER THAN 750PX */
+
+@media only screen and (min-width:750px) {
+    .indexLastRow {
+        margin: 0 25% 0 25%;
+    }
+    .linkBtn {
+        width: calc(33.333% - 20px);
+        height: calc(100% - 10px);
+        margin: 5px 10px 5px 10px;
+    }
+    #indexTitleFont {
+        font-size: 35px;
+    }
+    .indexFont {
+        font-size: 3.5vw;
+    }
+    .aa {
+        width: calc(50% - 60px);
+        height: calc(30vw + 50px);
+    }
+    .aaLastRow {
+        margin-left: calc(25% + 30px);
+        width: calc(50% - 60px);
+        height: calc(30vw + 50px);
+    }
+    .cc {
+        height: calc(100% - 15vw + 40px);
+        padding-top: calc(15vw - 90px);
+        font-size: 45px;
+    }
+    }
+    .dd {
+        font-size: 1.7vw;
+    }
+    .indexImgLinkContainer {
+        width: 49.99%;
+        position: relative;
+        display: block;
+        float: left
+    }
+    #linkContainer {
+        width: calc(100% - 40px);
+        height: 60px;
+        font-size: 44;
+        float: left;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #photoRowContainer {
+        width: 100%;
+        height: 12vw;
+    }
+    #allThumbs {
+        width: 10%;
+        height: 10vw;
+        margin: 1.125vw 1.125% 1.125vw 1.125%;
+    }
+    #allThumbsL1 {
+        width: 10%;
+        height: 10vw;
+        margin: 1.125vw 1.125% 1.125vw 2.125%;
+    }
+    #allThumbsL2 {
+        width: 10%;
+        height: 10vw;
+        margin: 1.125vw 1.125% 1.125vw 1.125%;
+    }
+    #allThumbsR1 {
+        width: 10%;
+        height: 10vw;
+        margin: 1.125vw 2.125% 1.125vw 1.125%;
+    }
+    #allThumbsR2 {
+        width: 10%;
+        height: 10vw;
+        margin: 1.125vw 1.125% 1.125vw 1.125%;
+    }
+}
+
+
+/* STYLE APPLIED TO SCREENS BIGGER THAN 1540PX */
+
+@media only screen and (min-width:1540px) {
+    .linkBtn {
+        width: calc(33.333% - 100px);
+        height: calc(100% - 30px);
+        margin: 15px 50px 15px 50px;
+    }
+    #linkContainer {
+        width: calc(100% - 200px);
+        height: 60px;
+        font-size: 44;
+        float: left;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    #photoRowContainer {
+        width: 100%;
+        height: 10vw;
+    }
+    #allThumbs {
+        width: 8%;
+        height: 8vw;
+        margin: 1vw 2% 1vw 2%;
+    }
+    #allThumbsL1 {
+        width: 8%;
+        height: 8vw;
+        margin: 1vw 2% 1vw 4%;
+    }
+    #allThumbsL2 {
+        width: 8%;
+        height: 8vw;
+        margin: 1vw 2% 1vw 2%;
+    }
+    #allThumbsR1 {
+        width: 8%;
+        height: 8vw;
+        margin: 1vw 4% 1vw 2%;
+    }
+    #allThumbsR2 {
+        width: 8%;
+        height: 8vw;
+        margin: 1vw 2% 1vw 2%;
+    }
+}
