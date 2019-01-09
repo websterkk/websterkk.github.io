@@ -36,19 +36,73 @@ body {
     width: calc(100% - 55px);
     height:43px;
     padding-left: 10px;
-    background-color: #8787c5;
+    background-color: #8B8BA8;
     font-size: 20px;
     display: inline-block;    
     vertical-align: 40px;
 }
 
+.sideLinksA {
+    font-family: 'Source Code Pro', monospace;
+    font-style: italic;
+    padding-top: 17px;
+    width: calc(100% - 55px);
+    height:43px;
+    padding-left: 10px;
+    background-color: #8B8BA8;
+    font-size: 20px;
+    display: none;    
+    vertical-align: 40px;
+}
+
 .sideTail {
     font-size: 0px; line-height: 0%; width: 0px;
-    border-top: 60px solid #8787c5;
+    border-top: 60px solid #8B8BA8;
     border-right: 35px solid #212145;
     display: inline-block;
     margin-left: -10px;
     vertical-align: top;
+}
+
+@media only screen and (max-width: 780px) {
+	.sideLinks {
+	    display: none; 
+	}
+	.sideLinksA {
+	    display: inline-block; 
+	}
+	#allContent {
+	    width: 600px;
+	}
+	#linkBar {
+	    right: -60px;
+	    width: 185px;
+	}
+	.sideShape{
+	    width: calc(100% +5px);
+	    height: 60px;
+	    margin-bottom: 5px;
+	    cursor: pointer;
+	}
+	#allContent{
+	    left: calc(50% - 325px);
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#aboutMe {
+	    width: 370px;
+	}
+	h3{
+	    font-size: 21px;
+	}
+	h1{
+	    font-size: 36px;
+	}
+	#allContent{
+	    left: calc(50% - 275px);
+	    width: 500px;
+	}
 }
 
 .sideShape{
@@ -101,6 +155,10 @@ body {
 
 .email {
     background-image: url("../img/icons/em.png");
+}
+
+.steam {
+    background-image: url("../img/icons/steam.png");
 }
 
 .home {
