@@ -88,23 +88,23 @@ body {
 }
 
 .facebook {
-    background-image: url("../icons/fb.png");
+    background-image: url("../img/icons/fb.png");
 }
 
 .linkedIn {
-    background-image: url("../icons/li.png");
+    background-image: url("../img/icons/li.png");
 }
 
 .github {
-    background-image: url("../icons/gh.png");
+    background-image: url("../img/icons/gh.png");
 }
 
 .email {
-    background-image: url("../icons/em.png");
+    background-image: url("../img/icons/em.png");
 }
 
 .home {
-    background-image: url("../icons/home.png");
+    background-image: url("../img/icons/home.png");
     position:absolute;
     right: 0px;
 }
