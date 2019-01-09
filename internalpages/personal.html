@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Kasey Webster - Personal Projects</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <script src="../js/myJS.js"></script>
+    <script src="../js/modaljson.js"></script>
+</head>
+
+<body>
+    <div id="menuBtn" onclick="openMenu()"></div>
+    <div id="ddMenu" class="ddLinks">
+        test
+    </div>
+    <div id="title">
+        <h2>Personal Projects</h2>
+    </div>
+    <div id="sectionHead">HTML</div>
+    <div class="scrollContainer">
+        <div class="quickView" style="background-image: url('../img/me471.png');" onclick="openModal(0,0);"></div>
+        <div class="quickView" style="background-image: url('../img/photoalbm.png');" onclick="openModal(0,1);"></div>
+    </div>
+    <div id="sectionHead">Woodworking</div>
+    <div class="scrollContainer">
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,2);"></div>
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,3);"></div>
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,4);"></div>
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,5);"></div>
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,6);"></div>
+    </div>
+    <div id="sectionHead">Videos</div>
+    <div class="scrollContainer">
+        <div class="quickView" style="background-image: url('../img/scary.png');" onclick="openModal(0,8);"></div>
+        <div class="quickView" style="background-image: url('../img/snowbike.png');" onclick="openModal(0,9);"></div>
+        <div class="quickView" style="background-image: url('../img/lucy.png');" onclick="openModal(0,10);"></div>
+        <div class="quickView" style="background-image: url('../img/whiskey.png');" onclick="openModal(0,11);"></div>
+    </div>
+
+    <div id="modalBackground" onclick="this.style.display='none'">
+        <div id="modalContainer">
+            <div id="modalImage"></div>
+            <div id="modalAbstract"></div>
+            <div id="goToModal" onclick="goToLink()">SEE PROJECT</div>
+        </div>
+    </div>
+</body>
+
+</html>

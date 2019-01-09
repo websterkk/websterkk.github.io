@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Kasey Webster - School Projects</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/myJS.js"></script>
+    <script src="./js/modaljson.js"></script>
+</head>
+
+<body>
+    <div id="menuBtn" onclick="openMenu()"></div>
+    <div id="ddMenu" class="ddLinks">
+        test
+    </div>
+    <div id="title">
+        <h2>School Projects</h2>
+    </div>
+    <div id="sectionHead">Graduate Research</div>
+    <div class="scrollContainer">
+        <div class="quickView" style="background-image: url('./img/star.png');" onclick="openModal(1,0)"></div>
+        <div class="quickView" style="background-image: url('./img/starnx.png');" onclick="openModal(1,1)"></div>
+    </div>
+    <div id="sectionHead">Classes</div>
+    <div class="scrollContainer">
+        <div class="quickView" style="background-image: url('./img/starnx.png');" onclick="openModal(1,2);"></div>
+        <div class="quickView" style="background-image: url('./img/starnx.png');" onclick="openModal(1,3)"></div>
+        <div class="quickView" style="background-image: url('./img/starnx.png');" onclick="openModal(1,4)"></div>
+        <div class="quickView" style="background-image: url('./img/me471.png');" onclick="openModal(1,5)"></div>
+    </div>
+
+    <div id="modalBackground" onclick="this.style.display='none'">
+        <div id="modalContainer">
+            <div id="modalImage"></div>
+            <div id="modalAbstract"></div>
+            <div id="goToModal" onclick="goToPage()">SEE PROJECT</div>
+        </div>
+    </div>
+</body>
+
+</html>
