@@ -1,0 +1,116 @@
+body {
+    background-color: #212145;
+    color: white;
+    font-family: 'PT Mono', monospace;
+}
+
+#allContent {
+    width: 700px;
+    height: 317px;
+    left: calc(50% - 375px);
+    top: calc(50% - 205px);
+    position: absolute;
+}
+
+#aboutMe {
+    position: absolute;
+    height:254px;
+    width: 470px;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+}
+
+#linkBar {
+    position: absolute;
+    right:-60px;
+    top:0px;
+    width: 285px;
+    height: 260px;
+}
+
+.sideLinks {
+    font-family: 'Source Code Pro', monospace;
+    font-style: italic;
+    padding-top: 17px;
+    width: calc(100% - 55px);
+    height:43px;
+    padding-left: 10px;
+    background-color: #8787c5;
+    font-size: 20px;
+    display: inline-block;    
+    vertical-align: 40px;
+}
+
+.sideTail {
+    font-size: 0px; line-height: 0%; width: 0px;
+    border-top: 60px solid #8787c5;
+    border-right: 35px solid #212145;
+    display: inline-block;
+    margin-left: -10px;
+    vertical-align: top;
+}
+
+.sideShape{
+    width: calc(100% - 15px);
+    height: 60px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.sideShape:hover {
+    filter: blur(0px);
+    width: 100%;
+    transform: rotate(0deg);
+}
+
+#socialBar {
+    position: absolute;
+    padding-top: 5px;
+    bottom: 0px;
+    width: 100%;
+    height:50px;
+    border-top:white solid 2px;
+}
+
+.socialIcon {
+    display: inline-block;
+    margin: 0 0 0 0;
+    height: 40px;
+    width: 40px;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.socialIcon:hover {
+    filter: blur(0.5px);
+    transform: rotate(0deg);
+}
+
+.facebook {
+    background-image: url("../icons/fb.png");
+}
+
+.linkedIn {
+    background-image: url("../icons/li.png");
+}
+
+.github {
+    background-image: url("../icons/gh.png");
+}
+
+.email {
+    background-image: url("../icons/em.png");
+}
+
+.home {
+    background-image: url("../icons/home.png");
+    position:absolute;
+    right: 0px;
+}
+
+.videoPlayer {
+    position: absolute;
+    left: calc(50% - 500px);
+    top: calc(50% - 350px);
+}
