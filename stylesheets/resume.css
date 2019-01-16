@@ -1,0 +1,61 @@
+body {
+    background-color: #212145;
+    font-family: 'PT Mono', 'Cutive Mono', monospace;
+    margin: 0%;
+}
+.topLinks {
+    display: inline-block;
+    width: 30%;
+    color: white;
+}
+.titleText {
+    text-align: center;
+}
+#personalInfo {
+    margin: 10px 10px 10px 10px;
+    width: calc(100% - 200px);
+    height: calc(190px);
+}
+#aboutMeContainer {
+    border: black 1px solid;
+    margin-right: 0px;
+    width: calc(60% - 5px);
+    display: inline-block;
+    background-color: white;
+}
+#portraitContainer {
+    border: black 1px solid;
+    margin-left: 0px;
+    width: calc(40% - 9px);
+    height: 70px;
+    display: inline-block;
+    background-color: red;
+}
+#educationContainer {
+    margin: 0px 10px 10px 10px;
+    border: black 1px solid;
+    width: calc(100% - 200px);
+    display: inline-block;
+    background-color: white;
+}
+#skillsContainer {
+    margin: 0px 10px 10px 10px;
+    border: black 1px solid;
+    width: calc(100% - 200px);
+    display: inline-block;
+    background-color: white;
+}
+#experienceContainer {
+    margin: 0px 10px 10px 10px;
+    border: black 1px solid;
+    width: calc(100% - 200px);
+    display: inline-block;
+    background-color: white;
+}
+#otherContainer {
+    margin: 0px 10px 10px 10px;
+    border: black 1px solid;
+    width: calc(100% - 200px);
+    display: inline-block;
+    background-color: white;
+}
