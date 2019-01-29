@@ -3,6 +3,7 @@
 var tabIndex;
 var lastIndex = 0;
 var linkIndex;
+var link;
 
 function showResume() {
     tabIndex = 1;
@@ -29,11 +30,18 @@ function openModal(curPage, row) {
     else thisMod = modal.personal;
     var modImg = thisMod[row][0];
     var modAbs = thisMod[row][1];
-    linkIndex = row;
+    link = thisMod[row][3];
     document.getElementById("modalImage").style.backgroundImage = modImg;
     document.getElementById("modalAbstract").innerHTML = modAbs;
     document.getElementById("modalBackground").style.display = "block";
     //linkIndex = modal.personal[row][col];
+    alert(link);
+}
+
+function goToLink() {
+    alert(link);
+    window.open(link);
+    link = '';
 }
 
 function goToPage(linkIndex) {

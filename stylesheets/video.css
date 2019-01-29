@@ -1,0 +1,53 @@
+body {
+    background-color: #212145;
+    font-family: 'PT Mono', monospace;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+#vidTitle {
+    position:absolute;
+    top: 20px;
+    text-align:center;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 410px) {
+    #vidContainer {
+        position: absolute;
+        left: calc(50% - 200px);
+        top: calc(50% - 125px);
+    }
+    #vidPlayer {
+        height: 250px;
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    #vidContainer {
+        position: absolute;
+        left: calc(50% - 350px);
+        top: calc(50% - 200px);
+    }
+    #vidPlayer {
+        height: 400px;
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 1010px) {
+    #vidContainer {
+        position: absolute;
+        left: calc(50% - 500px);
+        top: calc(50% - 300px);
+    }
+    #vidPlayer {
+        height: 600px;
+        width: 1000px;
+    }
+}
+
