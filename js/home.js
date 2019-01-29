@@ -35,11 +35,9 @@ function openModal(curPage, row) {
     document.getElementById("modalAbstract").innerHTML = modAbs;
     document.getElementById("modalBackground").style.display = "block";
     //linkIndex = modal.personal[row][col];
-    alert(link);
 }
 
 function goToLink() {
-    alert(link);
     window.open(link);
     link = '';
 }
