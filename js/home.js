@@ -30,9 +30,11 @@ function openModal(curPage, row) {
     else thisMod = modal.personal;
     var modImg = thisMod[row][0];
     var modAbs = thisMod[row][1];
+    var modLink = thisMod[row][2];
     link = thisMod[row][3];
     document.getElementById("modalImage").style.backgroundImage = modImg;
     document.getElementById("modalAbstract").innerHTML = modAbs;
+    document.getElementById("goToModal").innerHTML = modLink;
     document.getElementById("modalBackground").style.display = "block";
     //linkIndex = modal.personal[row][col];
 }
