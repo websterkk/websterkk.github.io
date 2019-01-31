@@ -50,7 +50,7 @@ function goToLink() {
 }
 
 function goToPage(linkIndex) {
-    window.open(linkIndex);
+    window.open(linkIndex,_self);
     linkIndex = '';
 }
 
