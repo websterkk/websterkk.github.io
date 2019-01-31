@@ -14,7 +14,7 @@ var modal = {
         ['url("../img/whiskey.png")','Cover of Whiskey by Trampled by Turtles','Watch Video','https://websterkk.github.io/internalpages/video.html?y=7uKOnInJXhY']
     ],
     "school": [
-        ['url("./img/comingSoon.jpg")','Photo Album Website','Read Thesis','https://scholarsarchive.byu.edu/etd/6094/'],
+        ['url("./img/comingSoon.jpg")','Masters Thesis: Using STAR-CCM+ to Evaluate Multi-User Collaboration in CFD','Read Thesis','https://scholarsarchive.byu.edu/etd/6094/'],
         ['url("./img/star.png")','Presented at 2014 STAR Global Conference in Vienna, Austria','View Presentation','http://mdx2.plm.automation.siemens.com/conference/star-global-conference-2014'],
         ['url("./img/comingSoon.png")','Moon lander game created in C++ with Qt','coming soon', 'http://websterkk.github.io/me471'],
         ['url("./img/comingSoon.png")','Integrated Leap Motion controller with 3D model in NX as part of a group project','coming soon'],

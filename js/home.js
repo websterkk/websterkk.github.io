@@ -25,9 +25,14 @@ window.onclick = function (event) {
 
 function openModal(curPage, row) {
     var thisMod;
-    if (curPage == 1)
+    if (curPage == 1) {
+        alert("school");
         thisMod = modal.school;
-    else thisMod = modal.personal;
+    }
+    else {
+        alert("personal");
+        thisMod = modal.personal;
+    }
     var modImg = thisMod[row][0];
     var modAbs = thisMod[row][1];
     var modLink = thisMod[row][2];
