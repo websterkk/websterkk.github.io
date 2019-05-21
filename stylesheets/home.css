@@ -4,6 +4,18 @@ body {
     font-family: 'PT Mono', monospace;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color:pink;
+}
+
+a:link, a:visited {
+    color: white;
+}
+
 #allContent {
     width: 700px;
     height: 317px;

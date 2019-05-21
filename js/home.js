@@ -15,7 +15,7 @@ function openMenu() {
     document.getElementById("ddMenu").classList.toggle("show");
 }
 
-window.onclick = function (event) {
+window.onclick = function(event) {
     if (!event.target.matches("#menuBtn")) {
         if (document.getElementById("ddMenu").classList.contains('show')) {
             document.getElementById("ddMenu").classList.remove('show');
@@ -28,8 +28,7 @@ function openModal(curPage, row) {
     if (curPage == 1) {
         //alert("school");
         thisMod = modal.school;
-    }
-    else {
+    } else {
         //alert("personal");
         thisMod = modal.personal;
     }
