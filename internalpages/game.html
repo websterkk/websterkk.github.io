@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./MachiKoro/gameStyle.css">
+    <script src="./MachiKoro/machikoro.js"></script>
+    <title>Game</title>
+</head>
+
+<body onload="getNUsers()">
+    <div id="gameWindow">
+        <div id="playerWindow">
+            <div id="player1" onclick="expandPlayer()" class="playerBtn">1</div>
+            <div id="player2" onclick="expandPlayer()" class="playerBtn">2</div>
+            <div id="player3" onclick="expandPlayer()" class="playerBtn">3</div>
+            <div id="player4" onclick="expandPlayer()" class="playerBtn">4</div>
+        </div>
+        <div id="handContainer">
+            <div id="hand1" class="hand blur" onclick="expandHand(0)">1         <div id="nHand1" class="nCards"></div></div>
+            <div id="hand2" class="hand blur" onclick="expandHand(1)">2         <div id="nHand2" class="nCards"></div></div>
+            <div id="hand3" class="hand blur" onclick="expandHand(2)">2-3       <div id="nHand3" class="nCards"></div></div>
+            <div id="hand4" class="hand blur" onclick="expandHand(3)">3         <div id="nHand4" class="nCards"></div></div>
+            <div id="hand5" class="hand blur" onclick="expandHand(4)">4         <div id="nHand5" class="nCards"></div></div>
+            <div id="hand6" class="hand blur" onclick="expandHand(5)">5         <div id="nHand6" class="nCards"></div></div>
+            <div id="hand7" class="hand blur" onclick="expandHand(6)">6         <div id="nHand7" class="nCards"></div></div>
+            <div id="hand8" class="hand blur" onclick="expandHand(7)">7         <div id="nHand8" class="nCards"></div></div>
+            <div id="hand9" class="hand blur" onclick="expandHand(8)">8         <div id="nHand9" class="nCards"></div></div>
+            <div id="hand10" class="hand blur" onclick="expandHand(9)">9        <div id="nHand10" class="nCards"></div></div>
+            <div id="hand11" class="hand blur" onclick="expandHand(10)">9-10    <div id="nHand11" class="nCards"></div></div>
+            <div id="hand12" class="hand blur" onclick="expandHand(11)">10      <div id="nHand12" class="nCards"></div></div>
+            <div id="hand13" class="hand blur" onclick="expandHand(12)">11-12   <div id="nHand13" class="nCards"></div></div>
+            <div id="hand14" class="hand blur" onclick="expandHand(13)">1       <div id="nHand14" class="nCards">1</div></div>
+            <div id="hand15" class="hand blur" onclick="expandHand(14)">2-3     <div id="nHand15" class="nCards">1</div></div>
+        </div>
+        <div id="bannerContainer" class="wFont">instructions
+            <div id="passBtn" onclick="passTurn();">Pass</div>
+        </div>
+        <div id="goalContainer">
+            <div id="goal1" class="goal" onclick="expandBuy(4,1)">4 - train</div>
+            <div id="goal2" class="goal" onclick="expandBuy(4,2)">10 - mall</div>
+            <div id="goal3" class="goal" onclick="expandBuy(4,3)">16 - park</div>
+            <div id="goal4" class="goal" onclick="expandBuy(4,4)">22 - stadium</div>
+        </div>
+        <div id="deckContainer">
+            <div id="draw00" class="drawCards dC1 dR1 blur" onclick="expandBuy(1,1)">card</div>
+            <div id="draw01" class="drawCards dC2 dR1 blur" onclick="expandBuy(1,2)">card</div>
+            <div id="draw02" class="drawCards dC3 dR1 blur" onclick="expandBuy(1,3)">card</div>
+            <div id="draw03" class="drawCards dC4 dR1 blur" onclick="expandBuy(1,4)">card</div>
+            <div id="draw04" class="drawCards dC5 dR1 blur">card back</div>
+            <div id="draw10" class="drawCards dC1 dR2 blur" onclick="expandBuy(2,1)">card</div>
+            <div id="draw11" class="drawCards dC2 dR2 blur" onclick="expandBuy(2,2)">card</div>
+            <div id="draw12" class="drawCards dC3 dR2 blur" onclick="expandBuy(2,3)">card</div>
+            <div id="draw13" class="drawCards dC4 dR2 blur" onclick="expandBuy(2,4)">card</div>
+            <div id="draw14" class="drawCards dC5 dR2 blur">card back</div>
+            <div id="draw20" class="drawCards dC1 dR3 blur" onclick="expandBuy(3,1)">card</div>
+            <div id="draw21" class="drawCards dC2 dR3 blur" onclick="expandBuy(3,2)">card</div>
+            <div id="draw22" class="drawCards dC3 dR3 blur" onclick="expandBuy(3,3)">card</div>
+            <div id="draw23" class="drawCards dC4 dR3 blur" onclick="expandBuy(3,4)">card</div>
+            <div id="draw24" class="drawCards dC5 dR3 blur">card back</div>
+        </div>
+        <div id="purseContainer" class="blur">3</div>
+        <div id="diceContainer">
+            <div id="oneDice" class="blur" onclick="rollOne();">
+                Roll <br>
+                1 dice
+            </div>
+            <div id="twoDice" class="blur" onclick="rollTwo(true);">
+                Roll <br>
+                2 dice
+            </div>
+        </div>
+        <div id="screenUpdate" onclick="updateRes();">Update Display</div>
+        <div id="playerModalBg" class="modalBg">
+            <div id="playerModal" class="modalContainer">
+                <div id="playerImg" class="modalImg"></div>
+                <div id="playerHand" class="modalHand"></div>
+                <div id="playerPurse" class="modalPurse"></div>
+                <div id="playerClose" class="modalClose" onclick="document.getElementById('playerModalBg').style.display='none'">X
+                </div>
+            </div>
+        </div>
+        <div id="cardModalBg" class="modalBg">
+            <div id="cardInfoModal" class="modalContainer">
+                <div id="cardImg" class="modalImg"></div>
+                <div id="cardTitle" class="modalTitle"></div>
+                <div id="cardDesc" class="modalDesc"></div>
+                <div id="cardExit" class="modalClose" onclick="document.getElementById('cardModalBg').style.display='none'">X
+                </div>
+                <div id="cardBuy" class="modalBuy wFont" onClick="getCard(curRow, curCol, curCard);">5</div>
+            </div>
+        </div>
+        </div>
+        <div id="npModal" class="modalBg">
+            <div id="nextPlayer" class="modalContainer">
+                <div id="playerGo">OK</div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+
+
+</html>

@@ -1,0 +1,409 @@
+body {
+	background-color: black;
+}
+
+#gameWindow {
+	background-color: green;
+	height: 98vh;
+	width: 120vh;
+	top: 1vh;
+	left: 1vh;
+	position: absolute;
+}
+
+#playerWindow {
+	position: absolute;
+	right: 0px !important;
+	width: 15%;
+	height: 60%;
+	top: 5%;
+}
+
+.playerBtn {
+	margin: 0 3px 3px 3px;
+	height: calc(25% - 3px);
+	width: calc(100% - 6px);
+	background-color: gray;
+}
+
+#handContainer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 17%;
+	width: 82%;
+}
+
+#screenUpdate {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	height: calc(6% - 3px);
+	width: calc(15% - 6px) ;
+	background-color: grey;
+}
+
+#goalContainer {
+	position: absolute;
+	left: 0px;
+	top: 7%;
+	height: 73%;
+	width: 15%;
+}
+
+.goal {
+	margin: 0 3px 3px 3px;
+	height: calc(25% - 3px);
+	width: calc(100% - 6px);
+	background-color: red;
+}
+
+#bannerContainer {
+	background-color: pink;
+	position: absolute;
+	top: 2%;
+	height: 10%;
+	width: 64%;
+	left: 18%;
+	font-size: 50px;
+}
+
+#passBtn {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	width: calc(15% - 4px);
+	height: calc(100% - 4px);
+	background-color: goldenrod;
+	border-radius: 50%;
+	display: none;
+}
+
+#deckContainer {
+	height: 65%;
+	width: 64%;
+	top: 15%;
+	left: 18%;
+	position: absolute;
+}
+
+#purseContainer {
+	background-color: orange;
+	position: absolute;
+	height: 17%;
+	width: 15%;
+	right: 0px;
+	bottom: 0px;
+}
+
+#diceContainer {
+	position: absolute;
+	right: 0;
+	bottom: 17%;
+	height: 15%;
+	width: 15%;
+}
+
+#oneDice {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+}
+
+#twoDice {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+}
+
+.dC1 {
+	position: absolute;
+	left: 0px;
+	width: calc(20% - 3px);
+	margin-right: 3px;
+}
+
+.dC2 {
+	position: absolute;
+	left: 20%;
+	width: calc(20% - 3px);
+	margin-right: 3px;
+}
+
+.dC3 {
+	position: absolute;
+	left: 40%;
+	width: calc(20% - 3px);
+	margin-right: 3px;
+}
+
+.dC4 {
+	position: absolute;
+	left: 60%;
+	width: calc(20% - 3px);
+	margin-right: 3px;
+}
+
+.dC5 {
+	position: absolute;
+	left: 80%;
+	width: calc(20% - 3px);
+	margin-right: 3px;
+}
+
+.dR1 {
+	top: 0px;
+	margin-bottom: 3px;
+}
+
+.dR2 {
+	top: 33.33%;
+	margin-bottom: 3px;
+}
+
+.dR3 {
+	top: 66.66%;
+	margin-bottom: 3px;
+}
+
+.drawCards {
+	width: calc(20% - 8px);
+	height: calc(33% - 7px);
+	background-color: gray;
+	position: absolute;
+	border-radius: 5px;
+	border: 2px solid white;
+}
+
+.hand {
+	position: absolute;
+	height: 98%;
+	width: 12%;
+	background-color: lime;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+#hand1 {
+	left: 0;
+	z-index: 1;
+	background-color: #3B68D9;
+}
+
+#hand2 {
+	left: 6%;
+	z-index: 2;
+	background-color: #3B68D9;
+}
+
+#hand3 {
+	left: 12%;
+	z-index: 3;
+	background-color: #3BD968;
+}
+
+#hand4 {
+	left: 18%;
+	z-index: 4;
+	background-color: #F73936;
+}
+
+#hand5 {
+	left: 24%;
+	z-index: 5;
+	background-color: #3BD968;
+}
+
+#hand6 {
+	left: 30%;
+	z-index: 6;
+	background-color: #3B68D9;
+}
+
+#hand7 {
+	left: 36%;
+	z-index: 7;
+	background-color: #9E3BD9;
+}
+
+#hand8 {
+	left: 42%;
+	z-index: 8;
+	background-color: #3B68D9;
+}
+
+#hand9 {
+	left: 48%;
+	z-index: 9;
+	background-color: #3BD968;
+}
+
+#hand10 {
+	left: 54%;
+	z-index: 10;
+	background-color: #3B68D9;
+}
+
+#hand11 {
+	left: 60%;
+	z-index: 11;
+	background-color: #F73936;
+}
+
+#hand12 {
+	left: 66%;
+	z-index: 12;
+	background-color: #3B68D9;
+}
+
+#hand13 {
+	left: 72%;
+	z-index: 13;
+	background-color: #3BD968;
+}
+
+#hand14 {
+	left: 78%;
+	z-index: 14;
+	background-color: #3B68D9;
+}
+
+#hand15 {
+	left: 88%;
+	z-index: 15;
+	background-color: #3BD968;
+}
+
+.modalBg {
+	z-index: 30;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(2, 2, 6, 0.87);
+	display: none;
+}
+
+.modalContainer {
+	background-color: rgb(33, 33, 43);
+	border: solid whitesmoke 2px;
+	position: absolute;
+	width: 80%;
+	height: 86%;
+	top: 7%;
+	left: 10%;
+	z-index: 31;
+}
+
+.modalClose {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	height: 60px;
+	width: 60px;
+	background-color: red;
+	border: 5px solid maroon;
+	border-radius: 35px;
+	color: white;
+	text-align: center;
+	font-size: 40px;
+}
+
+.modalBuy {
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+	height: 70px;
+	width: 70px;
+	background-color: yellow;
+	border: 5px solid goldenrod;
+	border-radius: 40px;
+	font-size: 50px;
+	text-align: center;
+	display: none;
+}
+
+.wFont {
+	color: white;
+	text-shadow: 1px 0px 1px black,
+		-1px 0px 1px black,
+		1px 1px 1px black,
+		-1px 1px 1px black,
+		1px -1px 1px black,
+		-1px -1px 1px black,
+		0px 1px 1px black,
+		0px -1px 1px black;
+}
+
+.modalImg {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	width: 30%;
+	background-color: steelblue;
+}
+
+.modalTitle {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: calc(70% - 15px);
+	height: 60px;
+	background-color: rebeccapurple;
+}
+
+.modalHand {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: calc(70% - 15px);
+	height: calc(100% - 10px);
+	background-color: seagreen;
+}
+
+.modalDesc {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	width: calc(70% - 15px);
+	height: calc(100% - 75px);
+	background-color: pink;
+}
+
+#cardImg {
+	height: calc(100% - 10px);
+}
+
+#playerImg {
+	height: calc(60% - 10px);
+}
+
+#frostBg {
+	display: block;
+	background-image: url("../../img/frost.png");
+	background-size: cover;
+	z-index: 30;
+	height: 100%;
+	width: 100%;
+	opacity: 0.7;
+}
+
+#playerGo {
+	display: block;
+	position: absolute;
+	background-color: green;
+	left: 40%;
+	top: 80%;
+	width: 20%;
+	height: 10%;
+	text-align: center;
+}
+
+.nCards {
+	display: block;
+	position: absolute;
+	left: 4px;
+	bottom: 4px;
+	font-size: 11px;
+}

@@ -1,7 +1,7 @@
 var modal = {
     "personal": [
-        ['url("../img/comingSoon.png")','JavaScript version of the board game "Machi Koro"','coming soon','https://scholarsarchive.byu.edu/etd/6094/'],
-        ['url("../img/photoalbm.png")','Photo Album Website','Visit Site','http://websterkk.github.io/internalpages/photoalbum.html'],
+        ['url("../img/blur")','JavaScript version of the board game "Machi Koro"','Visit Site','https://websterkk.github.io/internalpages/game.html'],
+        ['url("../img/photoalbm.png")','Photo Album Website','Visit Site','https://websterkk.github.io/internalpages/photoalbum.html'],
         ['url("../img/comingSoon.png")','Oak bookcase','Coming Soon'],
         ['url("../img/comingSoon.png")','Bed frame','Coming Soon'],
         ['url("../img/comingSoon.png")','Coffee table','Coming Soon'],
