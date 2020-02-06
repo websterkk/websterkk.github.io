@@ -5,18 +5,29 @@ body {
 #gameWindow {
 	background-color: green;
 	height: 98vh;
-	width: 120vh;
+	width: 122vh;
 	top: 1vh;
-	left: 1vh;
+	left: calc(50% -61vh);
 	position: absolute;
+}
+
+@media only screen and (max-aspect-ratio: 10/8) {	
+	#gameWindow {
+		background-color: green;
+		width: 98vw;
+		height: 78vw;
+		top: calc(50% - 39vw);
+		left: 1vw;
+		position: absolute;
+	}
 }
 
 #playerWindow {
 	position: absolute;
 	right: 0px !important;
 	width: 15%;
-	height: 60%;
-	top: 5%;
+	height: 57%;
+	top: 2%;
 }
 
 .playerBtn {
@@ -30,8 +41,8 @@ body {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-	height: 17%;
-	width: 82%;
+	height: 19%;
+	width: 100%;
 }
 
 #screenUpdate {
@@ -46,8 +57,8 @@ body {
 #goalContainer {
 	position: absolute;
 	left: 0px;
-	top: 7%;
-	height: 73%;
+	top: 2%;
+	height: 75%;
 	width: 15%;
 }
 
@@ -61,7 +72,7 @@ body {
 #bannerContainer {
 	background-color: pink;
 	position: absolute;
-	top: 2%;
+	top: 1%;
 	height: 10%;
 	width: 64%;
 	left: 18%;
@@ -82,7 +93,7 @@ body {
 #deckContainer {
 	height: 65%;
 	width: 64%;
-	top: 15%;
+	top: 13%;
 	left: 18%;
 	position: absolute;
 }
@@ -93,29 +104,7 @@ body {
 	height: 17%;
 	width: 15%;
 	right: 0px;
-	bottom: 0px;
-}
-
-#diceContainer {
-	position: absolute;
-	right: 0;
-	bottom: 17%;
-	height: 15%;
-	width: 15%;
-}
-
-#oneDice {
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-}
-
-#twoDice {
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	right: 0;
+	bottom: 23%;
 }
 
 .dC1 {
@@ -296,6 +285,52 @@ body {
 	z-index: 31;
 }
 
+.modalMed {
+	background-color: rgb(33, 33, 43);
+	border: solid whitesmoke 2px;
+	position: absolute;
+	width: 80%;
+	height: 40%;
+	top: 30%;
+	left: 10%;
+	z-index: 31;
+}
+
+.modalSmall {
+	background-color: rgb(33, 33, 43);
+	border: solid whitesmoke 2px;
+	position: absolute;
+	width: 88%;
+	height: 20%;
+	top: 40%;
+	left: 6%;
+	z-index: 31;
+}
+
+#diceContainer {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	height: calc(100% - 30px);
+	width: calc(30% - 15px);
+}
+
+#oneDice {
+	width: 50%;
+	height: 100%;
+	background-color: blue;
+	position:absolute;
+	left:0;
+}
+
+#twoDice {
+	width: 50%;
+	height: 100%;
+	background-color:green;
+	position: absolute;
+	right: 0;
+}
+
 .modalClose {
 	position: absolute;
 	top: -20px;
@@ -406,4 +441,32 @@ body {
 	left: 4px;
 	bottom: 4px;
 	font-size: 11px;
+}
+
+#howMany {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background-color: red;
+	height: calc(60% - 20px);
+	width: calc(100% - 30px);
+}
+
+#npContainer {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	background-color: green;
+	height: calc(40% - 20px);
+	width: calc(100% - 30px);
+}
+
+.chooseNP {
+	position: relative;
+	height: 90%;
+	width: 14%;
+	margin: 1% 1% 5% 1%;
+	display: inline-block;
+	background-color: purple;
+	mar
 }

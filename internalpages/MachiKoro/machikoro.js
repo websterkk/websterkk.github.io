@@ -38,13 +38,33 @@ function updateRes() {
 }
 
 function getNUsers() {
-  updateRes();
-  var nUsersString = prompt("How Many Users?", "1");
-  nUsers = parseInt(nUsersString);
+  //updateRes();
+  //var nUsersString = prompt("How Many Users?", "1");
+  //nUsers = parseInt(nUsersString);
   shuffleDraw();
   stage = 1;
-  document.getElementById("bannerContainer").innerHTML = "Roll the dice"
-  //alert(drawLow);
+  document.getElementById("nPlayersModal").style.display = "block";
+  //userStart();
+}
+
+function nPlayers(nP) {
+  nUsers = nP;
+  document.getElementById("nPlayersModal").style.display = "none";
+  userStart();
+}
+
+function userStart() {
+  //alert(turn);
+  document.getElementById("playerIntro").innerHTML = "Player " + (turn + 1) + " - Go";
+  document.getElementById("nextModal").style.display = "block";
+}
+
+function startRoll() {
+  document.getElementById("nextModal").style.display = "none";
+  document.getElementById("bannerContainer").innerHTML = "Roll the dice";
+  document.getElementById("oneDice").innerHTML = "Roll 1";
+  document.getElementById("twoDice").innerHTML = "Roll 2";
+  document.getElementById("rollModal").style.display = "block";
 }
 
 var currBank = [{
@@ -87,7 +107,7 @@ var indexBank = {
 
 var drawPile = {
   'low': [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],
-  'med': [5, 5, 5, 5, 5, 13, 13, 13,13,13, 14, 14, 14, 14,14,15,15,15, 15, 15, 7, 7, 7, 7, 7],
+  'med': [5, 5, 5, 5, 5, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 15, 15, 15, 15, 15, 7, 7, 7, 7, 7],
   'high': [8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12]
 };
 
@@ -191,7 +211,7 @@ function rollOne() {
     //alert("Your rolled " + d1);
     document.getElementById("twoDice").innerHTML = d1;
     document.getElementById("oneDice").innerHTML = "";
-    getNum(d1);
+    getNum(nT);
   }
 }
 
@@ -223,6 +243,7 @@ function showRoll(d1, d2, nT) {
 
 function getNum(nT) {
   stage = 1;
+  setTimeout('document.getElementById("rollModal").style.display = "none";',2000);
   if (nT === 2 || nT === 3) {
     resolve(nT - 1);
     resolve(11);
@@ -243,16 +264,15 @@ function resolve(rIndx) {
   if (stage == 1) {
     //alert("index: " + rIndx);
     var currCol = indexBank.color[rIndx];
-    alert("color: " + currCol);
     var nInst;
     if (currCol === 0) { // BLUE
       //nInst = currBank[0].own[rIndx];
       //alert(nInst);
       for (var i = 0; i < nUsers; i++) {
         nInst = currBank[i].own[rIndx];
-        alert(nInst);
+        //alert(nInst);
         for (var j = 0; j < nInst; j++) {
-          alert(rIndx);
+          //alert(rIndx);
           currBank[i].playerCoins += indexBank.payment[rIndx];
         }
       }
@@ -328,7 +348,15 @@ function updatePurse() {
 }
 
 function updateGoals() {
-
+  var goalInd;
+  for (i = 1; i < 5; i++) {
+    goalInd = "goal" + i;
+    nCards = currBank[turn].own[i + 15];
+    if (nCards == 0)
+      document.getElementById(goalInd).innerHTML = "0";
+    else if (nCards == 1)
+      document.getElementById(goalInd).innerHTML = "bought";
+  }
 }
 
 function updateHand() {
@@ -369,9 +397,10 @@ function expandHand(cardNo) {
     }
     //var index = string(row - 1) + string(col - 1);
     document.getElementById('cardModalBg').style.display = "block";
-    document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo];
-    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo];
+    document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo] + " card";
+    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo] + " description";
     //document.getElementById('cardImg').style.backgroundImage = indexBank.img[cardNo];
+    document.getElementById('cardImg').innerHTML = indexBank.indName[cardNo] + " image";
     document.getElementById('cardBuy').style.display = "none";
   }
 }
@@ -379,8 +408,8 @@ function expandHand(cardNo) {
 function expandBuy(row, col) {
   if (stage == 2) {
     var cardNo = choosePile[(row - 1)][(col - 1)];
-    document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo];
-    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo];
+    document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo] + " card";
+    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo] + " description";
     document.getElementById('cardModalBg').style.display = "block";
     //document.getElementById('cardImg').style.backgroundImage = indexBank.img[cardNo];
     if ((indexBank.cost[cardNo] < currBank[turn].playerCoins && cardNo < 14) ||
@@ -404,7 +433,7 @@ function getCard(row, col, cardNo) {
   currBank[turn].own[cardNo] += 1;
   dealCards(row - 1, col - 1);
   document.getElementById('cardModalBg').style.display = "none";
-  alert(currBank[turn].own[cardNo]);
+  //alert(currBank[turn].own[cardNo]);
   updatePurse();
   checkWin()
 }
@@ -425,12 +454,11 @@ function checkWin() {
 }
 
 function endTurn() {
-  if (turn === nUsers - 1)
+  if (turn == nUsers - 1)
     turn = 0;
   else turn += 1;
-  updateImages();
   stage = 1;
-  //document.getElementById("npModal").style.display = "block";
+  setTimeout('updateImages();',3000);
   //updateImages();
 }
 
@@ -438,4 +466,11 @@ function updateImages() {
   // get User Utitilities
   // dim/highlight items
   // bold user
+  //alert("turn: " + turn);
+  //alert("stage: " + stage);
+  //document.getElementById("nextModal").style.display = "block";
+  userStart();
+  updatePurse();
+  updateGoals();
+  updateHand();
 }

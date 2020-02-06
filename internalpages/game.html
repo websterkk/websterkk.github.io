@@ -16,21 +16,36 @@
             <div id="player4" onclick="expandPlayer()" class="playerBtn">4</div>
         </div>
         <div id="handContainer">
-            <div id="hand1" class="hand blur" onclick="expandHand(0)">1         <div id="nHand1" class="nCards"></div></div>
-            <div id="hand2" class="hand blur" onclick="expandHand(1)">2         <div id="nHand2" class="nCards"></div></div>
-            <div id="hand3" class="hand blur" onclick="expandHand(2)">2-3       <div id="nHand3" class="nCards"></div></div>
-            <div id="hand4" class="hand blur" onclick="expandHand(3)">3         <div id="nHand4" class="nCards"></div></div>
-            <div id="hand5" class="hand blur" onclick="expandHand(4)">4         <div id="nHand5" class="nCards"></div></div>
-            <div id="hand6" class="hand blur" onclick="expandHand(5)">5         <div id="nHand6" class="nCards"></div></div>
-            <div id="hand7" class="hand blur" onclick="expandHand(6)">6         <div id="nHand7" class="nCards"></div></div>
-            <div id="hand8" class="hand blur" onclick="expandHand(7)">7         <div id="nHand8" class="nCards"></div></div>
-            <div id="hand9" class="hand blur" onclick="expandHand(8)">8         <div id="nHand9" class="nCards"></div></div>
-            <div id="hand10" class="hand blur" onclick="expandHand(9)">9        <div id="nHand10" class="nCards"></div></div>
-            <div id="hand11" class="hand blur" onclick="expandHand(10)">9-10    <div id="nHand11" class="nCards"></div></div>
-            <div id="hand12" class="hand blur" onclick="expandHand(11)">10      <div id="nHand12" class="nCards"></div></div>
-            <div id="hand13" class="hand blur" onclick="expandHand(12)">11-12   <div id="nHand13" class="nCards"></div></div>
-            <div id="hand14" class="hand blur" onclick="expandHand(13)">1       <div id="nHand14" class="nCards">1</div></div>
-            <div id="hand15" class="hand blur" onclick="expandHand(14)">2-3     <div id="nHand15" class="nCards">1</div></div>
+            <div id="hand1" class="hand blur" onclick="expandHand(0)">1 <div id="nHand1" class="nCards"></div>
+            </div>
+            <div id="hand2" class="hand blur" onclick="expandHand(1)">2 <div id="nHand2" class="nCards"></div>
+            </div>
+            <div id="hand3" class="hand blur" onclick="expandHand(2)">2-3 <div id="nHand3" class="nCards"></div>
+            </div>
+            <div id="hand4" class="hand blur" onclick="expandHand(3)">3 <div id="nHand4" class="nCards"></div>
+            </div>
+            <div id="hand5" class="hand blur" onclick="expandHand(4)">4 <div id="nHand5" class="nCards"></div>
+            </div>
+            <div id="hand6" class="hand blur" onclick="expandHand(5)">5 <div id="nHand6" class="nCards"></div>
+            </div>
+            <div id="hand7" class="hand blur" onclick="expandHand(6)">6 <div id="nHand7" class="nCards"></div>
+            </div>
+            <div id="hand8" class="hand blur" onclick="expandHand(7)">7 <div id="nHand8" class="nCards"></div>
+            </div>
+            <div id="hand9" class="hand blur" onclick="expandHand(8)">8 <div id="nHand9" class="nCards"></div>
+            </div>
+            <div id="hand10" class="hand blur" onclick="expandHand(9)">9 <div id="nHand10" class="nCards"></div>
+            </div>
+            <div id="hand11" class="hand blur" onclick="expandHand(10)">9-10 <div id="nHand11" class="nCards"></div>
+            </div>
+            <div id="hand12" class="hand blur" onclick="expandHand(11)">10 <div id="nHand12" class="nCards"></div>
+            </div>
+            <div id="hand13" class="hand blur" onclick="expandHand(12)">11-12 <div id="nHand13" class="nCards"></div>
+            </div>
+            <div id="hand14" class="hand blur" onclick="expandHand(13)">1 <div id="nHand14" class="nCards">1</div>
+            </div>
+            <div id="hand15" class="hand blur" onclick="expandHand(14)">2-3 <div id="nHand15" class="nCards">1</div>
+            </div>
         </div>
         <div id="bannerContainer" class="wFont">instructions
             <div id="passBtn" onclick="passTurn();">Pass</div>
@@ -59,23 +74,13 @@
             <div id="draw24" class="drawCards dC5 dR3 blur">card back</div>
         </div>
         <div id="purseContainer" class="blur">3</div>
-        <div id="diceContainer">
-            <div id="oneDice" class="blur" onclick="rollOne();">
-                Roll <br>
-                1 dice
-            </div>
-            <div id="twoDice" class="blur" onclick="rollTwo(true);">
-                Roll <br>
-                2 dice
-            </div>
-        </div>
-        <div id="screenUpdate" onclick="updateRes();">Update Display</div>
         <div id="playerModalBg" class="modalBg">
             <div id="playerModal" class="modalContainer">
                 <div id="playerImg" class="modalImg"></div>
                 <div id="playerHand" class="modalHand"></div>
                 <div id="playerPurse" class="modalPurse"></div>
-                <div id="playerClose" class="modalClose" onclick="document.getElementById('playerModalBg').style.display='none'">X
+                <div id="playerClose" class="modalClose"
+                    onclick="document.getElementById('playerModalBg').style.display='none'">X
                 </div>
             </div>
         </div>
@@ -84,20 +89,48 @@
                 <div id="cardImg" class="modalImg"></div>
                 <div id="cardTitle" class="modalTitle"></div>
                 <div id="cardDesc" class="modalDesc"></div>
-                <div id="cardExit" class="modalClose" onclick="document.getElementById('cardModalBg').style.display='none'">X
+                <div id="cardExit" class="modalClose"
+                    onclick="document.getElementById('cardModalBg').style.display='none'">X
                 </div>
                 <div id="cardBuy" class="modalBuy wFont" onClick="getCard(curRow, curCol, curCard);">5</div>
             </div>
         </div>
+        <div id="nextModal" class="modalBg">
+            <div id="nextPlayer" class="modalMed">
+                <div id="playerIntro" class="wFont"></div>
+                <div id="playerGo" onclick="startRoll()">OK</div>
+            </div>
         </div>
-        <div id="npModal" class="modalBg">
-            <div id="nextPlayer" class="modalContainer">
-                <div id="playerGo">OK</div>
+        <div id="nPlayersModal" class="modalBg">
+            <div id="npModal" class="modalMed">
+                <div id="howMany" class="wFont">How Many Players?</div>
+                <div id="npContainer">
+                    <div id="player2" class="chooseNP" onclick="nPlayers(2)">2</div>
+                    <div id="player3" class="chooseNP" onclick="nPlayers(3)">3</div>
+                    <div id="player4" class="chooseNP" onclick="nPlayers(4)">4</div>
+                    <div id="player5" class="chooseNP" onclick="nPlayers(5)">5</div>
+                    <div id="player6" class="chooseNP" onclick="nPlayers(6)">6</div>
+                    <div id="player7" class="chooseNP" onclick="nPlayers(7)">7</div>
+                </div>
+            </div>
+        </div>
+        <div id="rollModal" class="modalBg">
+            <div id="rollDice" class="modalSmall wFont">Roll the Dice
+                <div id="diceContainer">
+                    <div id="oneDice" class="blur" onclick="rollOne();">
+                        Roll <br>
+                        1 dice
+                    </div>
+                    <div id="twoDice" class="blur" onclick="rollTwo(true);">
+                        Roll <br>
+                        2 dice
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-   
+
 </body>
 
 
