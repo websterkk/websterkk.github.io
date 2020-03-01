@@ -91,6 +91,16 @@ var currBank = [{
     'cName': ['Player 5'],
     'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
     'playerCoins': 3,
+  },
+  {
+    'cName': ['Player 6'],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'playerCoins': 3,
+  },
+  {
+    'cName': ['Player 7'],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'playerCoins': 3,
   }
 ];
 
@@ -243,22 +253,37 @@ function showRoll(d1, d2, nT) {
 
 function getNum(nT) {
   stage = 1;
-  setTimeout('document.getElementById("rollModal").style.display = "none";',2000);
-  if (nT === 2 || nT === 3) {
-    resolve(nT - 1);
+  setTimeout('document.getElementById("rollModal").style.display = "none";',1500);
+  switch(nT) {
+  case (1):
+    resolve(0);
+  case (2):
+    resolve(1);
+    resolve(2);
+  case (3):
+    resolve(2);
+    resolve(3);
+  case (4):
+    resolve(4);
+  case (5):
+    resolve(5);
+  case (6):
+    resolve(6);
+  case (7):
+    resolve(7);
+  case (8):
+    resolve(8);
+  case (9):
+    resolve(9);
+    resolve(10);
+  case (10):
+    resolve(10);
     resolve(11);
-  } else if (nT === 9 || nT === 10) {
-    resolve(nT - 1);
-    resolve(11);
-  } else if (nT === 6) {
-    resolve(nT - 1);
-    resolve(11);
+  case (11):
+    resolve(12);
+  case (12):
+    resolve(12);
   }
-  if (nT > 10) {
-    resolve(nT - 1);
-    resolve(11);
-  } else resolve(nT - 1);
-}
 
 function resolve(rIndx) {
   if (stage == 1) {
@@ -271,9 +296,8 @@ function resolve(rIndx) {
       for (var i = 0; i < nUsers; i++) {
         nInst = currBank[i].own[rIndx];
         //alert(nInst);
-        for (var j = 0; j < nInst; j++) {
-          //alert(rIndx);
-          currBank[i].playerCoins += indexBank.payment[rIndx];
+        if (nInst > 0) {
+          currBank[i].playerCoins += (nInst * indexBank.payment[rIndx]);
         }
       }
     } else if (currCol === 1) { // GREEN
@@ -282,7 +306,7 @@ function resolve(rIndx) {
       var iAdd = checkSpecialB(rIndx);
       currBank[turn].playerCoins += ((nInst + iAdd) * iMult);
     } else if (currCol === 2) { // PURPLE
-      // do stuff
+      nInst = currBank[turn].own[rIndx];
     } else if (currCol === 3) { //RED
       loop1: for (var i = 0; i < nUsers; i++) {
         var j, k, l;
