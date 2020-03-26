@@ -63,7 +63,9 @@ function startRoll() {
   document.getElementById("nextModal").style.display = "none";
   document.getElementById("bannerContainer").innerHTML = "Roll the dice";
   document.getElementById("oneDice").innerHTML = "Roll 1";
-  document.getElementById("twoDice").innerHTML = "Roll 2";
+  if(currBank[turn].own[21] == "true") {
+    document.getElementById("twoDice").innerHTML = "Roll 2";
+  } else document.getElementById("twoDice").innerHTML = "";
   document.getElementById("rollModal").style.display = "block";
 }
 
@@ -215,7 +217,7 @@ function dealCards(r, c) {
 function rollOne() {
   if (stage === 1) {
     //var d1 = Math.floor((Math.random() * 6) + 1);
-    var d1 = 1;
+    var d1 = Math.floor((Math.random() * 6) + 1);
     var d2 = 0;
     var nT = d1 + d2;
     //alert("Your rolled " + d1);
@@ -248,6 +250,7 @@ function showRoll(d1, d2, nT) {
   //alert("Your rolled " + d1 + " and " + d2 + ". Total: " + nT);
   document.getElementById("oneDice").innerHTML = d1;
   document.getElementById("twoDice").innerHTML = d2;
+  //alert(nT);
   getNum(nT);
 }
 
@@ -256,13 +259,13 @@ function getNum(nT) {
   setTimeout('document.getElementById("rollModal").style.display = "none";',1500);
   switch(nT) {
   case (1):
-    resolve(0);
+    resolve(0,0);
   case (2):
-    resolve(1);
-    resolve(2);
+    resolve(2,0);
+    resolve(2,1);
   case (3):
-    resolve(2);
-    resolve(3);
+    resolve(3,1);
+    resolve(3,3);
   case (4):
     resolve(4);
   case (5):
@@ -284,11 +287,17 @@ function getNum(nT) {
   case (12):
     resolve(12);
   }
+    // Update Current User Purse
+    updatePurse();
+    // Got to next Stage
+    buyPhase();
+}
 
-function resolve(rIndx) {
+function resolve(rIndx,curCol) {
   if (stage == 1) {
     //alert("index: " + rIndx);
     var currCol = indexBank.color[rIndx];
+    //alert(currCol);
     var nInst;
     if (currCol === 0) { // BLUE
       //nInst = currBank[0].own[rIndx];
@@ -333,10 +342,6 @@ function resolve(rIndx) {
       }
       // done giving out money
     }
-    // Update Current User Purse
-    updatePurse();
-    // Got to next Stage
-    buyPhase();
   }
 }
 
@@ -368,7 +373,7 @@ function checkSpecialB(rIndx) {
 }
 
 function updatePurse() {
-  document.getElementById("purseContainer").innerHTML = currBank[turn].playerCoins;
+  document.getElementById("purseContainer").innerHTML = "Gold: " + currBank[turn].playerCoins;
 }
 
 function updateGoals() {

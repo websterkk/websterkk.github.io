@@ -1,3 +1,4 @@
+
 body {
 	background-color: black;
 }
@@ -443,13 +444,31 @@ body {
 	font-size: 11px;
 }
 
-#howMany {
+#startModal {
 	position: absolute;
 	top: 15px;
 	left: 15px;
 	background-color: red;
 	height: calc(60% - 20px);
 	width: calc(100% - 30px);
+}
+
+#howMany {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background-color: yellow;
+	height: calc(60% - 20px);
+	width: calc(75% - 20px);
+}
+
+#inst {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background-color: orange;
+	height: calc(60% - 20px);
+	width: calc(25% - 20px);
 }
 
 #npContainer {
@@ -464,7 +483,7 @@ body {
 .chooseNP {
 	position: relative;
 	height: 90%;
-	width: 14%;
+	width: calc(14% - 2px);
 	margin: 1% 1% 5% 1%;
 	display: inline-block;
 	background-color: purple;
