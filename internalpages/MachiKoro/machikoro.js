@@ -217,7 +217,7 @@ function dealCards(r, c) {
 function rollOne() {
   if (stage === 1) {
     //var d1 = Math.floor((Math.random() * 6) + 1);
-    var d1 = Math.floor((Math.random() * 6) + 1);
+    var d1 = 1;
     var d2 = 0;
     var nT = d1 + d2;
     //alert("Your rolled " + d1);
@@ -258,34 +258,46 @@ function getNum(nT) {
   stage = 1;
   setTimeout('document.getElementById("rollModal").style.display = "none";',1500);
   switch(nT) {
-  case (1):
-    resolve(0,0);
-  case (2):
-    resolve(2,0);
-    resolve(2,1);
-  case (3):
-    resolve(3,1);
-    resolve(3,3);
-  case (4):
-    resolve(4);
-  case (5):
-    resolve(5);
-  case (6):
-    resolve(6);
-  case (7):
-    resolve(7);
-  case (8):
-    resolve(8);
-  case (9):
-    resolve(9);
-    resolve(10);
-  case (10):
-    resolve(10);
-    resolve(11);
-  case (11):
-    resolve(12);
-  case (12):
-    resolve(12);
+    case (1):
+      resolve(0,0);
+      break;
+    case (2):
+      resolve(1,0);
+      resolve(2,1);
+      break;
+    case (3):
+      resolve(2,1);
+      resolve(3,3);
+      break;
+    case (4):
+      resolve(4,1);
+      break;
+    case (5):
+      resolve(5,0);
+      break;
+    case (6):
+      resolve(6,2);
+      break;
+    case (7):
+      resolve(7,1);
+      break;
+    case (8):
+      resolve(8,1);
+      break;
+    case (9):
+      resolve(9,0);
+      resolve(10,3);
+      break;
+    case (10):
+      resolve(10,3);
+      resolve(11,0);
+      break;
+    case (11):
+      resolve(12,1);
+      break;
+    case (12):
+      resolve(12,1);
+      break;
   }
     // Update Current User Purse
     updatePurse();
@@ -293,12 +305,9 @@ function getNum(nT) {
     buyPhase();
 }
 
-function resolve(rIndx,curCol) {
+function resolve(rIndx,currCol) {
   if (stage == 1) {
-    //alert("index: " + rIndx);
-    var currCol = indexBank.color[rIndx];
-    //alert(currCol);
-    var nInst;
+    var nInst, iAdd, iMult;
     if (currCol === 0) { // BLUE
       //nInst = currBank[0].own[rIndx];
       //alert(nInst);
@@ -311,12 +320,19 @@ function resolve(rIndx,curCol) {
       }
     } else if (currCol === 1) { // GREEN
       nInst = currBank[turn].own[rIndx];
-      var iMult = checkSpecialA(rIndx);
-      var iAdd = checkSpecialB(rIndx);
-      currBank[turn].playerCoins += ((nInst + iAdd) * iMult);
+      iMult = checkSpecialMult(rIndx);
+      iAdd = checkSpecialAdd(rIndx);
+      if (rIndx == 12) {
+        currBank[turn].playerCoins += (2 * iMult);
+      } else if (rIndx === 7) {
+        currBank[turn].playerCoins += (3 * iMult);
+      } else if (rIndx === 8) {
+        currBank[turn].playerCoins += (3 * iMult);
+      } else currBank[turn].playerCoins += ((nInst * indexBank.payment[rIndx]) + iAdd);
     } else if (currCol === 2) { // PURPLE
       nInst = currBank[turn].own[rIndx];
     } else if (currCol === 3) { //RED
+      iAdd = checkSpecialAdd(rIndx);
       loop1: for (var i = 0; i < nUsers; i++) {
         var j, k, l;
         j = i + turn;
@@ -345,29 +361,36 @@ function resolve(rIndx,curCol) {
   }
 }
 
-function checkSpecialA(rIndx) {
+function checkSpecialMult(rIndx) {
   // MULTIPLY FOR FACTORIES
   var a = 0;
-  if (rIndx === 6) {
-    a += currBank[turn].own[1];
-  } else if (rIndx === 10) {
-    a += currBank[turn].own[0];
+  if (rIndx === 7) {
+    a += currBank[turn].own[2];
+  } else if (rIndx === 8) {
+    a += currBank[turn].own[5];
     a += currBank[turn].own[9];
-  } else if (rIndx === 7) {
-    a += currBank[turn].own[4];
-    a += currBank[turn].own[8];
+  } else if (rIndx === 12) {
+    a += currBank[turn].own[0];
+    a += currBank[turn].own[10];
   } else if (rIndx === 2 || rIndx === 10) {
     a += currBank[turn].own[9];
   }
   return a;
 }
 
-function checkSpecialB(rIndx) {
+function checkSpecialAdd(rIndx) {
   // ADD FOR SHOPPING MALL
   var b = 0;
-  if (rIndx === 3 || rIndx === 11) {
-    if (currBank[turn].own[17] == true)
-      b = 1;
+  if (currBank[turn].own[17] == true){
+    if (rIndx === 3) {
+      b += currBank[turn].own[3];
+    } else if (rIndx === 2) {
+      b += currBank[turn].own[2];
+    } else if (rIndx === 4) {
+      b += currBank[turn].own[4];
+    } else if (rIndx === 10) {
+      b += currBank[turn].own[10];
+    }
   }
   return b;
 }
@@ -441,8 +464,8 @@ function expandBuy(row, col) {
     document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo] + " description";
     document.getElementById('cardModalBg').style.display = "block";
     //document.getElementById('cardImg').style.backgroundImage = indexBank.img[cardNo];
-    if ((indexBank.cost[cardNo] < currBank[turn].playerCoins && cardNo < 14) ||
-      (indexBank.cost[cardNo] < currBank[turn].playerCoins && cardNo > 14 && currBank[turn].own[cardNo] == false)) {
+    if ((indexBank.cost[cardNo] <= currBank[turn].playerCoins && (cardNo < 13)) ||
+      (indexBank.cost[cardNo] <= currBank[turn].playerCoins && cardNo >= 13 && currBank[turn].own[6] == 777)) {
       document.getElementById('cardBuy').style.display = "block";
     } else document.getElementById('cardBuy').style.display = "none";
     //document.getElementById('cardBuy').addEventListener('click', getCard(row, col, cardNo))
