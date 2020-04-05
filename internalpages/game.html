@@ -14,6 +14,14 @@
             <div id="player2" onclick="expandPlayer()" class="playerBtn">2</div>
             <div id="player3" onclick="expandPlayer()" class="playerBtn">3</div>
             <div id="player4" onclick="expandPlayer()" class="playerBtn">4</div>
+            <div id="player5" onclick="expandPlayer()" class="playerBtn">5</div>
+        </div>
+        <div id="playerWindowCoins" class="wFont">
+            <div id="player1add" class="playerBtnAdd">a</div>
+            <div id="player2add" class="playerBtnAdd">a</div>
+            <div id="player3add" class="playerBtnAdd">a</div>
+            <div id="player4add" class="playerBtnAdd">a</div>
+            <div id="player5add" class="playerBtnAdd">a</div>
         </div>
         <div id="handContainer">
             <div id="hand1" class="hand blur" onclick="expandHand(0)">1 <div id="nHand1" class="nCards"></div>
@@ -47,31 +55,36 @@
             <div id="hand15" class="hand blur" onclick="expandHand(14)">2-3 <div id="nHand15" class="nCards">1</div>
             </div>
         </div>
-        <div id="bannerContainer" class="wFont">instructions
+        <div id="bannerContainer">
+            <div id="instContainer" class="wFont">Instructions</div>
+            <div id="diceBtn">
+                <div id="oneDice" class="dice" onclick="rollOne();"></div>
+                <div id="twoDice" class="dice" onclick="if (currBank[turn].own[16] == true) {rollTwo(true);}"></div>
+            </div>
             <div id="passBtn" onclick="passTurn();">Pass</div>
         </div>
         <div id="goalContainer">
             <div id="goal1" class="goal" onclick="expandBuy(4,1)">4 - train</div>
             <div id="goal2" class="goal" onclick="expandBuy(4,2)">10 - mall</div>
             <div id="goal3" class="goal" onclick="expandBuy(4,3)">16 - park</div>
-            <div id="goal4" class="goal" onclick="expandBuy(4,4)">22 - stadium</div>
+            <div id="goal4" class="goal" onclick="expandBuy(4,4)">22 - radio</div>
         </div>
         <div id="deckContainer">
             <div id="draw00" class="drawCards dC1 dR1 blur" onclick="expandBuy(1,1)">card</div>
             <div id="draw01" class="drawCards dC2 dR1 blur" onclick="expandBuy(1,2)">card</div>
             <div id="draw02" class="drawCards dC3 dR1 blur" onclick="expandBuy(1,3)">card</div>
             <div id="draw03" class="drawCards dC4 dR1 blur" onclick="expandBuy(1,4)">card</div>
-            <div id="draw04" class="drawCards dC5 dR1 blur">card back</div>
+            <div id="draw04" class="drawCards dC5 dR1 blur"></div>
             <div id="draw10" class="drawCards dC1 dR2 blur" onclick="expandBuy(2,1)">card</div>
             <div id="draw11" class="drawCards dC2 dR2 blur" onclick="expandBuy(2,2)">card</div>
             <div id="draw12" class="drawCards dC3 dR2 blur" onclick="expandBuy(2,3)">card</div>
             <div id="draw13" class="drawCards dC4 dR2 blur" onclick="expandBuy(2,4)">card</div>
-            <div id="draw14" class="drawCards dC5 dR2 blur">card back</div>
+            <div id="draw14" class="drawCards dC5 dR2 blur"></div>
             <div id="draw20" class="drawCards dC1 dR3 blur" onclick="expandBuy(3,1)">card</div>
             <div id="draw21" class="drawCards dC2 dR3 blur" onclick="expandBuy(3,2)">card</div>
             <div id="draw22" class="drawCards dC3 dR3 blur" onclick="expandBuy(3,3)">card</div>
             <div id="draw23" class="drawCards dC4 dR3 blur" onclick="expandBuy(3,4)">card</div>
-            <div id="draw24" class="drawCards dC5 dR3 blur">card back</div>
+            <div id="draw24" class="drawCards dC5 dR3 blur"></div>
         </div>
         <div id="purseContainer" class="blur">Gold: 3</div>
         <div id="playerModalBg" class="modalBg">
@@ -101,6 +114,17 @@
                 <div id="playerGo" onclick="startRoll()">OK</div>
             </div>
         </div>
+        <div id="rollAgainModal" class="modalBg">
+            <div id="nextPlayer" class="modalSmall">
+                <div id="rollAgainText" class="wFont">You rolled Doubles <br> Roll Again?</div>
+                <div id="diceContainer">
+                    <div id="oneDice" class="dice"></div>
+                    <div id="twoDice" class="dice"></div>
+                </div>
+                <div id="playerY" onclick="reRoll(1)">YES</div>
+                <div id="playerN" onclick="reRoll(0)">NO</div>
+            </div>
+        </div>
         <div id="nPlayersModal" class="modalBg">
             <div id="npModal" class="modalMed">
                 <div id=startModal">
@@ -117,20 +141,7 @@
                 </div>
             </div>
         </div>
-        <div id="rollModal" class="modalBg">
-            <div id="rollDice" class="modalSmall wFont">Roll the Dice
-                <div id="diceContainer">
-                    <div id="oneDice" class="blur" onclick="rollOne();">
-                        Roll <br>
-                        1 dice
-                    </div>
-                    <div id="twoDice" class="blur" onclick="rollTwo(true);">
-                        Roll <br>
-                        2 dice
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 
 

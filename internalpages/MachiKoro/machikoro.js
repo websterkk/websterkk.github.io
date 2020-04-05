@@ -2,7 +2,10 @@
 // 0-blue;1-green;2-purple;3-red
 // todo feb 3 - move to next turn, update hand, update goals
 
-var nUsers, wH, wW, wAS, curRow, curCol, curCard;
+// ==============================================
+// --------------- SET VARIABLES ----------------
+// ==============================================
+var nUsers, curRow, curCol, curCard, nT;
 var stage = 0;
 var turn = 0;
 var firstRedo = true;
@@ -44,7 +47,7 @@ function getNUsers() {
   shuffleDraw();
   stage = 1;
   document.getElementById("nPlayersModal").style.display = "block";
-  //userStart();
+  userStart();
 }
 
 function nPlayers(nP) {
@@ -61,47 +64,49 @@ function userStart() {
 
 function startRoll() {
   document.getElementById("nextModal").style.display = "none";
-  document.getElementById("bannerContainer").innerHTML = "Roll the dice";
+  document.getElementById("instContainer").innerHTML = "Roll the dice";
   document.getElementById("oneDice").innerHTML = "Roll 1";
-  if(currBank[turn].own[21] == "true") {
+  if(currBank[turn].own[16] == true) {
     document.getElementById("twoDice").innerHTML = "Roll 2";
   } else document.getElementById("twoDice").innerHTML = "";
-  document.getElementById("rollModal").style.display = "block";
+  setTimeout('document.getElementById("diceBtn").style.display = "block";',100);
 }
 
 var currBank = [{
     'cName': ['Player 1'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    //'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
+    'own': [2, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,false, false, false, false],
     'playerCoins': 3
   },
   {
     'cName': ['Player 2'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    //'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
+    'own': [1, 1, 1, 2, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,false, false, false, false],
     'playerCoins': 3
   },
   {
     'cName': ['Player 3'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'own': [1, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
     'playerCoins': 3
   },
   {
     'cName': ['Player 4'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
     'playerCoins': 3
   },
   {
     'cName': ['Player 5'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
     'playerCoins': 3,
   },
   {
     'cName': ['Player 6'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
     'playerCoins': 3,
   },
   {
     'cName': ['Player 7'],
-    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false],
+    'own': [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,false, false, false, false],
     'playerCoins': 3,
   }
 ];
@@ -110,19 +115,22 @@ var indexBank = {
   'num': ['1', '2', '2-3', '3', '4', '5', '6', '7', '8', '9', '9-10', '10', '11-12', '6', '6', '6', 'U', 'U', 'U', 'U'],
   'indName': ['wheat', 'ranch', 'bakery', 'cafe', 'convenience', 'forest', '777', 'cheese', 'furniture', 'mine', 'restaurant', 'orchard', 'market', 'stadium', 'tv', 'business', 'train', 'mall', 'park', 'radio'],
   'color': [0, 0, 1, 3, 1, 0, 2, 1, 1, 0, 3, 0, 1, 2, 2, 2],
-  'text': [''],
+  'text': ['1 from bank - any turn','1 from bank - any turn', '1 from bank - your turn', '1 from roller', '3 from bank - any turn', '1 from bank - any turn', 'stuff', '3 from bank for each ranch - your turn', '3 from bank for each forest and mine - your turn', '5 from bank - any turn', '2 from roller', '3 from bank - any turn', '2 for each wheat - your turn', 'Get 2 from each player - your turn', '5 coins from one player - your turn', 'Trade one non-purple card - your turn', 'You may roll 1 or 2 dice', 'each 2-3, 3, 4, 9-10 earns +1', 'take another turn if you roll doubles', 'choose to re-roll once per turn'],
   'cost': [1, 1, 1, 2, 2, 3, 777, 5, 3, 6, 3, 3, 2, 6, 7, 8, 4, 10, 16, 22],
-  'payment': [1, 1, 1, 2, 1, 1, 1, 777, ],
+  'payment': [1, 1, 1, 1, 3, 1, 777, "3x", "3x", 5, 2, 3, "2x", "2x", 5, "trade"],
   'img': [],
   'remaining': [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 };
 
 var drawPile = {
   'low': [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],
-  'med': [5, 5, 5, 5, 5, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 15, 15, 15, 15, 15, 7, 7, 7, 7, 7],
-  'high': [8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12]
+  'med': [5, 5, 5, 5, 5,13,13,13,13,13,14,14,14,14,14,15,15,15,15,15, 7, 7, 7, 7, 7],
+  'high': [8,8, 8, 8, 8, 9, 9, 9, 9, 9,10,10,10,10,10,11,11,11,11,11,12,12,12,12,12]
 };
 
+// ==============================================
+// ------------- SHUFFLE AND DEAL ---------------
+// ==============================================
 function shuffleDraw() {
   var drawLow3, drawLow2, drawLow1, drawMed3, drawMed2, drawMed1, drawHigh3, drawHigh2, drawHigh1 = [];
   drawLow3 = drawPile.low.sort(function (a, b) {
@@ -214,16 +222,19 @@ function dealCards(r, c) {
   updateHand();
 }
 
+// ==============================================
+// --------------- ROLL DICE --------------------
+// ==============================================
 function rollOne() {
   if (stage === 1) {
     //var d1 = Math.floor((Math.random() * 6) + 1);
-    var d1 = 1;
+    var d1 = 12;
     var d2 = 0;
-    var nT = d1 + d2;
+    nT = d1 + d2;
     //alert("Your rolled " + d1);
     document.getElementById("twoDice").innerHTML = d1;
     document.getElementById("oneDice").innerHTML = "";
-    getNum(nT);
+    getNum();
   }
 }
 
@@ -231,32 +242,30 @@ function rollTwo(firstRedo) {
   if (stage === 1) {
     var d1 = Math.floor((Math.random() * 6) + 1);
     var d2 = Math.floor((Math.random() * 6) + 1);
-    var nT = d1 + d2;
-    if (d1 === d2 && firstRedo == true)
-      reRoll(d1, d2, nT, nD);
-    else showRoll(d1, d2, nT);
+    document.getElementById("oneDice").innerHTML = d1;
+    document.getElementById("twoDice").innerHTML = d2;
+    nT = d1 + d2;
+    if (d1 === d2 && firstRedo == true && currBank[turn].own[16] == true){
+      alert("doubles");
+      document.getElementById("rollAgainModal").style.display = "block";
+
+    }
+    //reRoll(d1, d2, nT, nD);
+    else getNum();
   }
 }
 
-function reRoll(d1, d2, nT, nD) {
-  if (confirm("You rolled doubles: " + d1 + " and " + d2 + ". Total: " + nT + ". Would you like to Re-Roll?") == true) {
+function reRoll(answer) {
+  document.getElementById("rollAgainModal").style.display = "none";
+  if (answer = 1) {
     rollTwo(false);
   } else {
-    getNum(nT);
+    getNum();
   }
 }
 
-function showRoll(d1, d2, nT) {
-  //alert("Your rolled " + d1 + " and " + d2 + ". Total: " + nT);
-  document.getElementById("oneDice").innerHTML = d1;
-  document.getElementById("twoDice").innerHTML = d2;
-  //alert(nT);
-  getNum(nT);
-}
-
-function getNum(nT) {
+function getNum() {
   stage = 1;
-  setTimeout('document.getElementById("rollModal").style.display = "none";',1500);
   switch(nT) {
     case (1):
       resolve(0,0);
@@ -266,8 +275,8 @@ function getNum(nT) {
       resolve(2,1);
       break;
     case (3):
-      resolve(2,1);
       resolve(3,3);
+      resolve(2,1);
       break;
     case (4):
       resolve(4,1);
@@ -285,8 +294,8 @@ function getNum(nT) {
       resolve(8,1);
       break;
     case (9):
-      resolve(9,0);
       resolve(10,3);
+      resolve(9,0);
       break;
     case (10):
       resolve(10,3);
@@ -305,9 +314,14 @@ function getNum(nT) {
     buyPhase();
 }
 
+
+// ==============================================
+// ----------------- GIVE GOLD ------------------
+// ==============================================
 function resolve(rIndx,currCol) {
   if (stage == 1) {
-    var nInst, iAdd, iMult;
+    var iAdd, iMult;
+    var nInst = 0;
     if (currCol === 0) { // BLUE
       //nInst = currBank[0].own[rIndx];
       //alert(nInst);
@@ -320,30 +334,46 @@ function resolve(rIndx,currCol) {
       }
     } else if (currCol === 1) { // GREEN
       nInst = currBank[turn].own[rIndx];
-      iMult = checkSpecialMult(rIndx);
-      iAdd = checkSpecialAdd(rIndx);
-      if (rIndx == 12) {
-        currBank[turn].playerCoins += (2 * iMult);
-      } else if (rIndx === 7) {
-        currBank[turn].playerCoins += (3 * iMult);
-      } else if (rIndx === 8) {
-        currBank[turn].playerCoins += (3 * iMult);
-      } else currBank[turn].playerCoins += ((nInst * indexBank.payment[rIndx]) + iAdd);
+      //alert(nInst);
+      if (currBank[turn].own[rIndx] > 0) {
+        if (rIndx == 12) {
+          iMult = checkSpecialMult(rIndx);
+          currBank[turn].playerCoins += (2 * iMult);
+        } else if (rIndx === 7) {
+          iMult = checkSpecialMult(rIndx);
+          currBank[turn].playerCoins += (3 * iMult);
+        } else if (rIndx === 8) {
+          iMult = checkSpecialMult(rIndx);
+          currBank[turn].playerCoins += (3 * iMult);
+        } else {
+          iAdd = checkSpecialAdd(rIndx);
+          currBank[turn].playerCoins += ((nInst * indexBank.payment[rIndx]) + iAdd);
+        }
+      }
     } else if (currCol === 2) { // PURPLE
       nInst = currBank[turn].own[rIndx];
+      if (nInst == 1) {
+        if (currBank[turn].own[13] == true){
+          // 2 coins from all players
+        } else if (currBank[turn].own[14] == true) {
+          // 5 coins from any player
+        } else if (currBank[turn].own[15] == true) {
+          // trade non purple with another player
+        }
+      }
     } else if (currCol === 3) { //RED
       iAdd = checkSpecialAdd(rIndx);
-      loop1: for (var i = 0; i < nUsers; i++) {
-        var j, k, l;
+      var j,k,l;
+      loop1: for (var i = 1; i < nUsers; i++) {
         j = i + turn;
-        if (j >= nUsers) {
+        if (j > (nUsers - 1)) {
           k = j - nUsers;
         } else k = j;
         var addOne = 0;
         if (currBank[k].own[17] == true) {
           addOne = 1;
         }
-        nInst = currBank[j].own[rIndx];
+        nInst = currBank[k].own[rIndx];
         var rollerBank = currBank[turn].playerCoins;
         var playerOwed = nInst * (indexBank.payment[rIndx] + addOne);
         // Check if Roller Has enough coins
@@ -396,7 +426,12 @@ function checkSpecialAdd(rIndx) {
 }
 
 function updatePurse() {
+  for (var i = 0; i < nPlayers; i++) {
+    document.getElementById("player" + (i + 1) + "add").innerHTML = "+5"
+  }
   document.getElementById("purseContainer").innerHTML = "Gold: " + currBank[turn].playerCoins;
+    document.getElementById("playerWindowCoins").style.display = "block";
+    setTimeout('document.getElementById("playerWindowCoins").style.display = "none";',800);
 }
 
 function updateGoals() {
@@ -427,8 +462,8 @@ function updateHand() {
 
 function buyPhase() {
   stage = 2;
-  document.getElementById("bannerContainer").innerHTML = "Select a Card to Buy" +
-    '<div id="passBtn" onclick="passTurn();">Pass</div>';
+  document.getElementById("instContainer").innerHTML = "Select a Card to Buy";
+  document.getElementById("diceBtn").style.display = "none";
   document.getElementById("passBtn").style.display = "block";
 }
 
@@ -450,7 +485,7 @@ function expandHand(cardNo) {
     //var index = string(row - 1) + string(col - 1);
     document.getElementById('cardModalBg').style.display = "block";
     document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo] + " card";
-    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo] + " description";
+    document.getElementById('cardDesc').innerHTML = indexBank.text[cardNo];
     //document.getElementById('cardImg').style.backgroundImage = indexBank.img[cardNo];
     document.getElementById('cardImg').innerHTML = indexBank.indName[cardNo] + " image";
     document.getElementById('cardBuy').style.display = "none";
@@ -461,12 +496,14 @@ function expandBuy(row, col) {
   if (stage == 2) {
     var cardNo = choosePile[(row - 1)][(col - 1)];
     document.getElementById('cardTitle').innerHTML = indexBank.indName[cardNo] + " card";
-    document.getElementById('cardDesc').innerHTML = indexBank.indName[cardNo] + " description";
+    document.getElementById('cardDesc').innerHTML = indexBank.text[cardNo];
+    document.getElementById('cardImg').innerHTML = indexBank.indName[cardNo] + " image";
     document.getElementById('cardModalBg').style.display = "block";
     //document.getElementById('cardImg').style.backgroundImage = indexBank.img[cardNo];
-    if ((indexBank.cost[cardNo] <= currBank[turn].playerCoins && (cardNo < 13)) ||
-      (indexBank.cost[cardNo] <= currBank[turn].playerCoins && cardNo >= 13 && currBank[turn].own[6] == 777)) {
+    if ((indexBank.cost[cardNo] <= currBank[turn].playerCoins && (cardNo < 13 || cardNo > 15)) ||
+      (indexBank.cost[cardNo] <= currBank[turn].playerCoins && (cardNo >= 13 && cardNo < 16) && currBank[turn].own[6] == 0)) {
       document.getElementById('cardBuy').style.display = "block";
+      document.getElementById('cardBuy').innerHTML = indexBank.cost[cardNo];
     } else document.getElementById('cardBuy').style.display = "none";
     //document.getElementById('cardBuy').addEventListener('click', getCard(row, col, cardNo))
     curRow = row;
@@ -482,15 +519,21 @@ function expandPlayer() {
 function getCard(row, col, cardNo) {
   //Do stuff
   currBank[turn].playerCoins -= indexBank.cost[cardNo];
-  currBank[turn].own[cardNo] += 1;
-  dealCards(row - 1, col - 1);
+  if (cardNo < 16) {
+    currBank[turn].own[cardNo] += 1;
+    dealCards(row - 1, col - 1);
+  } else {
+    currBank[turn].own[cardNo] = true;
+  }
+  document.getElementById('passBtn').style.display = "none";
   document.getElementById('cardModalBg').style.display = "none";
   //alert(currBank[turn].own[cardNo]);
-  updatePurse();
+  updateImages();
   checkWin()
 }
 
 function passTurn() {
+  document.getElementById('passBtn').style.display = "none";
   alert("passed");
   if (stage === 2)
     checkWin();
@@ -506,12 +549,18 @@ function checkWin() {
 }
 
 function endTurn() {
+  document.getElementById('instContainer').innerHTML = "Finishing Turn";
   if (turn == nUsers - 1)
     turn = 0;
   else turn += 1;
   stage = 1;
-  setTimeout('updateImages();',3000);
+  setTimeout('turnStart();',3000);
   //updateImages();
+}
+
+function turnStart() {
+  userStart();
+  updateImages();
 }
 
 function updateImages() {
@@ -521,7 +570,7 @@ function updateImages() {
   //alert("turn: " + turn);
   //alert("stage: " + stage);
   //document.getElementById("nextModal").style.display = "block";
-  userStart();
+  //userStart();
   updatePurse();
   updateGoals();
   updateHand();
