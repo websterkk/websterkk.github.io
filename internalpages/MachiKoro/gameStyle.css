@@ -562,14 +562,15 @@ body {
 	background-color: green;
 	height: calc(40% - 20px);
 	width: calc(100% - 30px);
+	display: block;
+	text-align: center;
 }
 
 .chooseNP {
-	position: relative;
-	height: 90%;
-	width: calc(14% - 2px);
-	margin: 1% 1% 5% 1%;
 	display: inline-block;
+	height: 100%;
+	margin-right: 5px;
+	margin-left: 5px;
+	width: calc(25% - 15px);
 	background-color: purple;
-	mar
 }

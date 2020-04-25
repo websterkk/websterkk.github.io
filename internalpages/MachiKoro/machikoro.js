@@ -227,8 +227,8 @@ function dealCards(r, c) {
 // ==============================================
 function rollOne() {
   if (stage === 1) {
-    //var d1 = Math.floor((Math.random() * 6) + 1);
-    var d1 = 12;
+    var d1 = Math.floor((Math.random() * 6) + 1);
+    //var d1 = 12;
     var d2 = 0;
     nT = d1 + d2;
     //alert("Your rolled " + d1);
@@ -351,11 +351,28 @@ function resolve(rIndx,currCol) {
         }
       }
     } else if (currCol === 2) { // PURPLE
-      nInst = currBank[turn].own[rIndx];
+      nInst = currBank[turn].own[6];
       if (nInst == 1) {
         if (currBank[turn].own[13] == true){
           // 2 coins from all players
+          var i, k, k, rollerBank;
+          for (i = 1; i < nUsers; i++) {
+            j = i +turn;
+            if (j > (nUsers - 1)) {
+              k = j - nUsers;
+            } else k = j;
+            rollerBank = currBank[k].playerCoins;
+            if (rollerBank < 5) {
+              currBank[k].playerCoins -= rollerBank;
+              currBank[turn].playerCoins += rollerBank;
+            } else {
+              currBank[k].playerCoins -= 2;
+              currBank[turn].playerCoins += 2;
+            }
+          }
         } else if (currBank[turn].own[14] == true) {
+          document.getElementById("playertv2").style.display = "none";
+          document.getElementById("tvResolve").style.display = "block";
           // 5 coins from any player
         } else if (currBank[turn].own[15] == true) {
           // trade non purple with another player
