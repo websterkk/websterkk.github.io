@@ -4,6 +4,10 @@ body {
     font-family: 'PT Mono', monospace;
 }
 
+h3 {
+    font-size: 23px;
+}
+
 a {
     text-decoration: none;
 }
@@ -17,7 +21,7 @@ a:link, a:visited {
 }
 
 #allContent {
-    width: 700px;
+    width: 710px;
     height: 317px;
     left: calc(50% - 375px);
     top: calc(50% - 205px);
@@ -27,7 +31,7 @@ a:link, a:visited {
 #aboutMe {
     position: absolute;
     height:254px;
-    width: 470px;
+    width: 475px;
     top: 0px;
     left: 0px;
     font-size: 20px;
